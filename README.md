@@ -135,11 +135,4 @@ ong-inclui-mais/
 
 4. Faça sua doação com transparência
 
-## Contato
-
-• **E-mail:** contato@ongincluimais.org
-
-• **Telefone:** (31) 9999-8888
-
-• **Endereço:** Rua das Organizações, 123 - Minas Gerais, MG
 
