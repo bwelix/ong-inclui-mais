@@ -4,9 +4,15 @@
 
 A ONG Inclui+ é uma plataforma web desenvolvida para conectar organizações do terceiro setor com voluntários, doadores e recursos necessários para ampliar seu alcance e maximizar seu impacto social.
 
-## Objetivo do projeto
+## Nosso projeto
 
-Democratizar o acesso à tecnologia de gestão para organizações do terceiro setor, permitindo que se concentrem no que realmente importa: causar impacto positivo na sociedade.
+Acreditamos que toda organização que faz o bem merece ter acesso às ferramentas necessárias para crescer e causar impacto. Criamos uma ponte digital onde:
+
+• ONGs encontram apoio para seus projetos
+
+• Voluntários descobrem oportunidades significativas
+
+• Doadores acompanham o impacto de suas contribuições
 
 ## Funcionalidades
 
@@ -52,12 +58,19 @@ Democratizar o acesso à tecnologia de gestão para organizações do terceiro s
 ```plaintext 
 ong-inclui-mais/
 │
-├── index.html          # Página principal
-├── cadastro.html       # Página de cadastro
-├── style.css          # Estilos principais
-├── script.js          # JavaScript com todas as funcionalidades
-└── img/               # Diretório de imagens
-    └── plantar.png
+├── index.html              # Página principal
+├── cadastro.html           # Página de cadastro
+├── projetos.html           # Página de projetos sociais
+├── style.css              # Estilos principais
+├── projetos.css           # Estilos específicos dos projetos
+├── script.js              # JavaScript principal
+├── projetos.js            # JavaScript dos projetos
+└── img/                   # Diretório de imagens
+    ├── plantar.png
+    ├── imagem1.jpg
+    ├── imagem2.jpg
+    ├── ong.webp
+    └── Reflorestamento Urbano.jpeg
    ```
 ## Funcionalidades Implementadas
 
@@ -135,4 +148,6 @@ ong-inclui-mais/
 
 4. Faça sua doação com transparência
 
+## Agradecimentos
 
+Agradecemos a todos que acreditam que tecnologia e empatia podem transformar o mundo. Cada linha de código, cada sugestão, cada compartilhamento nos ajuda a conectar mais causas e corações.
