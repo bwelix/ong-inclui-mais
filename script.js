@@ -1,35 +1,33 @@
-// script.js - Funcionalidades para a ONG Inclui+
+
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Navegação suave
+   
     initSmoothScroll();
     
-    // Funcionalidades do formulário de cadastro
+
     initFormToggle();
     
-    // Validação de formulários
+
     initFormValidation();
     
-    // Header fixo ao rolar
-    initStickyHeader();
     
-    // Animações de scroll
+    initStickyHeader();
+
     initScrollAnimations();
     
-    // Botão "Começar Agora"
     initStartButtons();
     
-    // Máscaras para campos
+   
     initMasks();
 });
 
-// Navegação suave para links internos
+
 function initSmoothScroll() {
     const links = document.querySelectorAll('a[href^="#"]');
     
     links.forEach(link => {
         link.addEventListener('click', function(e) {
-            // Se for link para cadastro e estiver na página de cadastro, não faz nada
+         
             if (this.getAttribute('href') === '#cadastro' && window.location.pathname.includes('cadastro.html')) {
                 return;
             }
@@ -53,7 +51,7 @@ function initSmoothScroll() {
     });
 }
 
-// Alternar entre formulários de ONG e Voluntário
+
 function initFormToggle() {
     const formButtons = document.querySelectorAll('.form-buttons .btn');
     const formSections = document.querySelectorAll('.form-section');
@@ -64,7 +62,7 @@ function initFormToggle() {
         button.addEventListener('click', function() {
             const formType = this.getAttribute('data-form');
             
-            // Atualizar botões ativos
+           
             formButtons.forEach(btn => {
                 btn.classList.remove('active');
                 if (btn.classList.contains('btn-secondary')) {
@@ -74,7 +72,7 @@ function initFormToggle() {
             this.classList.add('active');
             this.classList.remove('btn-secondary');
             
-            // Mostrar formulário correspondente
+     
             formSections.forEach(section => {
                 section.classList.remove('active');
                 if (section.id === `${formType}-form`) {
@@ -82,7 +80,7 @@ function initFormToggle() {
                 }
             });
             
-            // Se for voluntário, adicionar classe btn-secondary ao outro botão
+           
             const otherButton = Array.from(formButtons).find(btn => btn !== this);
             if (otherButton) {
                 otherButton.classList.add('btn-secondary');
@@ -91,7 +89,7 @@ function initFormToggle() {
     });
 }
 
-// Validação de formulários
+
 function initFormValidation() {
     const ongForm = document.getElementById('form-ong');
     const voluntarioForm = document.getElementById('form-voluntario');
@@ -113,7 +111,7 @@ function initFormValidation() {
                 showSuccessMessage('Cadastro realizado com sucesso! Em breve você receberá oportunidades compatíveis com seu perfil.');
                 this.reset();
                 
-                // Resetar para o formulário de ONG após cadastro bem-sucedido
+                
                 const ongButton = document.querySelector('[data-form="ong"]');
                 if (ongButton) {
                     ongButton.click();
@@ -123,7 +121,7 @@ function initFormValidation() {
     }
 }
 
-// Validar formulário de ONG
+
 function validateOngForm() {
     const nome = document.getElementById('ong-name');
     const cnpj = document.getElementById('ong-cnpj');
@@ -133,16 +131,15 @@ function validateOngForm() {
     
     let isValid = true;
     
-    // Resetar erros
     clearErrors();
     
-    // Validar nome
+   
     if (!nome.value.trim()) {
         showError(nome, 'Nome da ONG é obrigatório');
         isValid = false;
     }
     
-    // Validar CNPJ
+   
     if (!cnpj.value.trim()) {
         showError(cnpj, 'CNPJ é obrigatório');
         isValid = false;
@@ -151,7 +148,7 @@ function validateOngForm() {
         isValid = false;
     }
     
-    // Validar email
+  
     if (!email.value.trim()) {
         showError(email, 'E-mail é obrigatório');
         isValid = false;
@@ -160,13 +157,13 @@ function validateOngForm() {
         isValid = false;
     }
     
-    // Validar telefone
+ 
     if (!telefone.value.trim()) {
         showError(telefone, 'Telefone é obrigatório');
         isValid = false;
     }
     
-    // Validar causa
+  
     if (!causa.value) {
         showError(causa, 'Selecione uma causa principal');
         isValid = false;
@@ -175,7 +172,6 @@ function validateOngForm() {
     return isValid;
 }
 
-// Validar formulário de voluntário
 function validateVoluntarioForm() {
     const nome = document.getElementById('vol-name');
     const email = document.getElementById('vol-email');
@@ -184,16 +180,15 @@ function validateVoluntarioForm() {
     
     let isValid = true;
     
-    // Resetar erros
+    
     clearErrors();
     
-    // Validar nome
+   
     if (!nome.value.trim()) {
         showError(nome, 'Nome completo é obrigatório');
         isValid = false;
     }
     
-    // Validar email
     if (!email.value.trim()) {
         showError(email, 'E-mail é obrigatório');
         isValid = false;
@@ -202,13 +197,13 @@ function validateVoluntarioForm() {
         isValid = false;
     }
     
-    // Validar habilidades
+  
     if (!habilidades.value.trim()) {
         showError(habilidades, 'Informe suas habilidades');
         isValid = false;
     }
     
-    // Validar disponibilidade
+   
     if (!disponibilidade.value) {
         showError(disponibilidade, 'Selecione sua disponibilidade');
         isValid = false;
@@ -217,7 +212,7 @@ function validateVoluntarioForm() {
     return isValid;
 }
 
-// Validar CNPJ (validação básica)
+
 function validateCNPJ(cnpj) {
     cnpj = cnpj.replace(/[^\d]+/g, '');
     
@@ -225,7 +220,7 @@ function validateCNPJ(cnpj) {
     
     if (cnpj.length !== 14) return false;
     
-    // Elimina CNPJs inválidos conhecidos
+    
     if (cnpj === "00000000000000" || 
         cnpj === "11111111111111" || 
         cnpj === "22222222222222" || 
@@ -238,7 +233,7 @@ function validateCNPJ(cnpj) {
         cnpj === "99999999999999")
         return false;
         
-    // Valida DVs
+   
     let tamanho = cnpj.length - 2
     let numeros = cnpj.substring(0, tamanho);
     let digitos = cnpj.substring(tamanho);
@@ -269,27 +264,27 @@ function validateCNPJ(cnpj) {
     return true;
 }
 
-// Validar email
+
 function validateEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
 }
 
-// Mostrar erro no campo
+
 function showError(input, message) {
     const formGroup = input.closest('.form-group');
     if (!formGroup) return;
     
-    // Remover erro anterior
+    
     const existingError = formGroup.querySelector('.error-message');
     if (existingError) {
         existingError.remove();
     }
     
-    // Adicionar estilo de erro
+
     input.style.borderColor = '#e74c3c';
     
-    // Adicionar mensagem de erro
+   
     const errorElement = document.createElement('span');
     errorElement.className = 'error-message';
     errorElement.style.color = '#e74c3c';
@@ -301,7 +296,7 @@ function showError(input, message) {
     formGroup.appendChild(errorElement);
 }
 
-// Limpar erros
+
 function clearErrors() {
     const errorMessages = document.querySelectorAll('.error-message');
     errorMessages.forEach(error => error.remove());
@@ -312,9 +307,8 @@ function clearErrors() {
     });
 }
 
-// Mostrar mensagem de sucesso
 function showSuccessMessage(message) {
-    // Remover mensagem anterior
+   
     const existingMessage = document.querySelector('.success-message');
     if (existingMessage) {
         existingMessage.remove();
@@ -334,17 +328,17 @@ function showSuccessMessage(message) {
     if (formContainer) {
         formContainer.insertBefore(successElement, formContainer.firstChild);
         
-        // Rolagem suave para a mensagem
+      
         successElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
         
-        // Remover mensagem após 5 segundos
+        
         setTimeout(() => {
             successElement.remove();
         }, 5000);
     }
 }
 
-// Header fixo ao rolar
+
 function initStickyHeader() {
     const header = document.querySelector('header');
     let lastScrollY = window.scrollY;
@@ -372,7 +366,7 @@ function initStickyHeader() {
     });
 }
 
-// Animações de scroll
+
 function initScrollAnimations() {
     const observerOptions = {
         threshold: 0.1,
@@ -388,7 +382,7 @@ function initScrollAnimations() {
         });
     }, observerOptions);
     
-    // Observar elementos para animação
+
     const elementsToAnimate = document.querySelectorAll('.card, .section-title, .hero-content');
     elementsToAnimate.forEach(el => {
         el.style.opacity = '0';
@@ -398,13 +392,13 @@ function initScrollAnimations() {
     });
 }
 
-// Botões "Começar Agora" - redirecionar para cadastro
+
 function initStartButtons() {
     const startButtons = document.querySelectorAll('.btn[href="#cadastro"]');
     
     startButtons.forEach(button => {
         button.addEventListener('click', function(e) {
-            // Se não estiver na página de cadastro, redirecionar
+           
             if (!window.location.pathname.includes('cadastro.html')) {
                 e.preventDefault();
                 window.location.href = 'cadastro.html';
@@ -413,9 +407,8 @@ function initStartButtons() {
     });
 }
 
-// Máscaras para campos de formulário
 function initMasks() {
-    // Máscara para CNPJ
+   
     const cnpjInput = document.getElementById('ong-cnpj');
     if (cnpjInput) {
         cnpjInput.addEventListener('input', function(e) {
@@ -428,7 +421,7 @@ function initMasks() {
         });
     }
     
-    // Máscara para telefone
+    
     const phoneInputs = document.querySelectorAll('input[type="tel"]');
     phoneInputs.forEach(input => {
         input.addEventListener('input', function(e) {
