@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - ONG Inclui+</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+       
+
+<header>
+    <div class="container header-container">
+        <div class="logo">
+            <h1>ONG Inclui+</h1>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html#home">Início</a></li>
+            <li><a href="index.html#sobre">Sobre</a></li>
+            <li><a href="index.html#funcionalidades">Funcionalidades</a></li>
+            <li><a href="index.html#ongs">Para ONGs</a></li>
+            <li><a href="index.html#voluntarios">Para Voluntários</a></li>
+            <li><a href="index.html#doadores">Para Doadores</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+        <a href="cadastro.html" class="btn">Começar Agora</a>
+    </div>
+</header>
+   
+
+    <section id="cadastro" class="bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cadastre-se</h2>
+                <p>Junte-se à nossa comunidade de transformação</p>
+            </div>
+            <div class="form-container">
+                <h3 class="form-title">Selecione seu perfil</h3>
+                <div class="form-buttons">
+                    <button class="btn active" data-form="ong">Sou uma ONG</button>
+                    <button class="btn btn-secondary" data-form="voluntario">Sou Voluntário</button>
+                </div>
+                
+                <div id="ong-form" class="form-section active">
+                    <h3>Cadastre sua organização</h3>
+                    <p class="form-description">Preencha o formulário com os dados da sua ONG e em até 48h nossa equipe entrará em contato para validar seu cadastro e liberar o acesso completo à plataforma.</p>
+                    
+                    <form id="form-ong">
+                        <div class="form-group">
+                            <label for="ong-name">Nome da ONG *</label>
+                            <input type="text" id="ong-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ong-cnpj">CNPJ *</label>
+                            <input type="text" id="ong-cnpj" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ong-email">E-mail *</label>
+                            <input type="email" id="ong-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ong-phone">Telefone *</label>
+                            <input type="tel" id="ong-phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ong-cause">Causa Principal *</label>
+                            <select id="ong-cause" required>
+                                <option value="">Selecione uma causa</option>
+                                <option value="educacao">Educação</option>
+                                <option value="meio-ambiente">Meio Ambiente</option>
+                                <option value="saude">Saúde</option>
+                                <option value="direitos-humanos">Direitos Humanos</option>
+                                <option value="assistencia-social">Assistência Social</option>
+                                <option value="outra">Outra</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-submit">Enviar Cadastro</button>
+                    </form>
+                </div>
+                
+                <div id="voluntario-form" class="form-section">
+                    <h3>Junte-se ao nosso time de agentes de transformação</h3>
+                    <p class="form-description">Crie seu perfil, informe suas habilidades, disponibilidade e causas de interesse. Em breve, oportunidades compatíveis com seu perfil começarão a aparecer!</p>
+                    
+                    <form id="form-voluntario">
+                        <div class="form-group">
+                            <label for="vol-name">Nome Completo *</label>
+                            <input type="text" id="vol-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="vol-email">E-mail *</label>
+                            <input type="email" id="vol-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="vol-phone">Telefone</label>
+                            <input type="tel" id="vol-phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="vol-skills">Habilidades *</label>
+                            <textarea id="vol-skills" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="vol-availability">Disponibilidade *</label>
+                            <select id="vol-availability" required>
+                                <option value="">Selecione sua disponibilidade</option>
+                                <option value="manha">Manhã</option>
+                                <option value="tarde">Tarde</option>
+                                <option value="noite">Noite</option>
+                                <option value="finais-semana">Finais de semana</option>
+                                <option value="flexivel">Horário flexível</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-secondary btn-submit">Cadastrar como Voluntário</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer id="contato">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ONG Inclui+</h3>
+                    <p>Conectando talentos, recursos e causas para construir um mundo mais justo e solidário.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#sobre">Sobre nós</a></li>
+                        <li><a href="index.html#funcionalidades">Funcionalidades</a></li>
+                        <li><a href="index.html#ongs">Para ONGs</a></li>
+                        <li><a href="index.html#voluntarios">Para Voluntários</a></li>
+                        <li><a href="index.html#doadores">Para Doadores</a></li>
+                        <li><a href="index.html#faq">FAQ</a></li>
+                        <li><a href="cadastro.html">Cadastro</a></li>
+                        <li><a href="projeto.html">Projetos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <ul class="footer-links">
+                        <li>E-mail: contato@ongincluimais.org</li>
+                        <li>Telefone: (31) 9999-8888</li>
+                        <li>Endereço: Rua das Organizações, 123 - Minas Gerais, MG</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ONG Inclui+. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
