@@ -6,7 +6,7 @@
     <title>Cadastro - ONG Inclui+</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Estilos específicos para o formulário completo */
+      
         .form-section {
             display: none;
         }
@@ -122,7 +122,7 @@
                     <button class="btn btn-secondary" data-form="voluntario">Sou Voluntário</button>
                 </div>
                 
-                <!-- Formulário para ONGs -->
+              
                 <div id="ong-form" class="form-section active">
                     <h3>Cadastre sua organização</h3>
                     <p class="form-description">Preencha o formulário com os dados da sua ONG e em até 48h nossa equipe entrará em contato para validar seu cadastro e liberar o acesso completo à plataforma.</p>
@@ -215,7 +215,7 @@
                     </form>
                 </div>
                 
-                <!-- Formulário para Voluntários -->
+           
                 <div id="voluntario-form" class="form-section">
                     <h3>Junte-se ao nosso time de agentes de transformação</h3>
                     <p class="form-description">Crie seu perfil, informe suas habilidades, disponibilidade e causas de interesse. Em breve, oportunidades compatíveis com seu perfil começarão a aparecer!</p>
@@ -366,13 +366,13 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Inicializar funcionalidades do formulário
+     o
             initFormToggle();
             initFormValidation();
             initMasks();
         });
 
-        // Alternar entre formulários de ONG e Voluntário
+
         function initFormToggle() {
             const formButtons = document.querySelectorAll('.form-buttons .btn');
             const formSections = document.querySelectorAll('.form-section');
@@ -381,7 +381,7 @@
                 button.addEventListener('click', function() {
                     const formType = this.getAttribute('data-form');
                     
-                    // Atualizar botões ativos
+                    
                     formButtons.forEach(btn => {
                         btn.classList.remove('active');
                         if (btn.classList.contains('btn-secondary')) {
@@ -391,7 +391,7 @@
                     this.classList.add('active');
                     this.classList.remove('btn-secondary');
                     
-                    // Mostrar formulário correspondente
+                    
                     formSections.forEach(section => {
                         section.classList.remove('active');
                         if (section.id === `${formType}-form`) {
@@ -399,7 +399,7 @@
                         }
                     });
                     
-                    // Adicionar classe btn-secondary ao botão não ativo
+                  
                     const otherButton = Array.from(formButtons).find(btn => btn !== this);
                     if (otherButton) {
                         otherButton.classList.add('btn-secondary');
@@ -408,7 +408,7 @@
             });
         }
 
-        // Validação dos formulários
+   
         function initFormValidation() {
             const ongForm = document.getElementById('form-ong');
             const voluntarioForm = document.getElementById('form-voluntario');
@@ -434,7 +434,7 @@
             }
         }
 
-        // Validação do formulário de ONG
+       
         function validateOngForm() {
             const nome = document.getElementById('ong-name');
             const cnpj = document.getElementById('ong-cnpj');
@@ -450,7 +450,7 @@
             
             clearErrors();
             
-            // Validações
+           
             if (!nome.value.trim()) {
                 showError(nome, 'Nome da ONG é obrigatório');
                 isValid = false;
@@ -508,7 +508,7 @@
             return isValid;
         }
 
-        // Validação do formulário de voluntário
+       
         function validateVoluntarioForm() {
             const nome = document.getElementById('vol-name');
             const cpf = document.getElementById('vol-cpf');
@@ -525,7 +525,6 @@
             
             clearErrors();
             
-            // Validações
             if (!nome.value.trim()) {
                 showError(nome, 'Nome completo é obrigatório');
                 isValid = false;
@@ -597,14 +596,14 @@
             return isValid;
         }
 
-        // Validação de CNPJ
+        
         function validateCNPJ(cnpj) {
             cnpj = cnpj.replace(/[^\d]+/g, '');
             
             if (cnpj === '') return false;
             if (cnpj.length !== 14) return false;
             
-            // Elimina CNPJs inválidos conhecidos
+          
             if (cnpj === "00000000000000" || 
                 cnpj === "11111111111111" || 
                 cnpj === "22222222222222" || 
@@ -617,7 +616,7 @@
                 cnpj === "99999999999999")
                 return false;
                 
-            // Valida DVs
+         
             let tamanho = cnpj.length - 2
             let numeros = cnpj.substring(0, tamanho);
             let digitos = cnpj.substring(tamanho);
@@ -648,14 +647,14 @@
             return true;
         }
 
-        // Validação de CPF
+    
         function validateCPF(cpf) {
             cpf = cpf.replace(/[^\d]+/g, '');
             
             if (cpf === '') return false;
             if (cpf.length !== 11) return false;
             
-            // Elimina CPFs inválidos conhecidos
+            
             if (cpf === "00000000000" || 
                 cpf === "11111111111" || 
                 cpf === "22222222222" || 
@@ -668,7 +667,7 @@
                 cpf === "99999999999")
                 return false;
                 
-            // Valida 1o dígito
+           
             let add = 0;
             for (let i = 0; i < 9; i++) {
                 add += parseInt(cpf.charAt(i)) * (10 - i);
@@ -677,7 +676,7 @@
             if (rev === 10 || rev === 11) rev = 0;
             if (rev !== parseInt(cpf.charAt(9))) return false;
             
-            // Valida 2o dígito
+        
             add = 0;
             for (let i = 0; i < 10; i++) {
                 add += parseInt(cpf.charAt(i)) * (11 - i);
@@ -689,33 +688,32 @@
             return true;
         }
 
-        // Validação de CEP
+       
         function validateCEP(cep) {
             cep = cep.replace(/\D/g, '');
             return cep.length === 8;
         }
 
-        // Validação de e-mail
         function validateEmail(email) {
             const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return re.test(email);
         }
 
-        // Mostrar mensagem de erro
+       
         function showError(input, message) {
             const formGroup = input.closest('.form-group');
             if (!formGroup) return;
             
-            // Remover erro anterior
+       
             const existingError = formGroup.querySelector('.error-message');
             if (existingError) {
                 existingError.remove();
             }
             
-            // Estilizar input com erro
+          
             input.style.borderColor = '#e74c3c';
             
-            // Adicionar mensagem de erro
+        
             const errorElement = document.createElement('span');
             errorElement.className = 'error-message';
             errorElement.textContent = message;
@@ -723,7 +721,7 @@
             formGroup.appendChild(errorElement);
         }
 
-        // Limpar mensagens de erro
+        
         function clearErrors() {
             const errorMessages = document.querySelectorAll('.error-message');
             errorMessages.forEach(error => error.remove());
@@ -734,9 +732,9 @@
             });
         }
 
-        // Mostrar mensagem de sucesso
+      
         function showSuccessMessage(message) {
-            // Remover mensagem anterior
+            
             const existingMessage = document.querySelector('.success-message');
             if (existingMessage) {
                 existingMessage.remove();
@@ -750,19 +748,18 @@
             if (formContainer) {
                 formContainer.insertBefore(successElement, formContainer.firstChild);
                 
-                // Rolar para o topo da mensagem
+         
                 successElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 
-                // Remover mensagem após 5 segundos
+              
                 setTimeout(() => {
                     successElement.remove();
                 }, 5000);
             }
         }
 
-        // Inicializar máscaras de input - CORRIGIDO
         function initMasks() {
-            // Máscara para CNPJ
+           
             const cnpjInput = document.getElementById('ong-cnpj');
             if (cnpjInput) {
                 cnpjInput.addEventListener('input', function(e) {
@@ -777,7 +774,7 @@
                 });
             }
             
-            // Máscara para CPF
+         
             const cpfInput = document.getElementById('vol-cpf');
             if (cpfInput) {
                 cpfInput.addEventListener('input', function(e) {
@@ -791,24 +788,23 @@
                 });
             }
             
-            // Máscara para telefone - CORRIGIDA
+           
             const phoneInputs = document.querySelectorAll('input[type="tel"]');
             phoneInputs.forEach(input => {
                 input.addEventListener('input', function(e) {
                     let value = e.target.value.replace(/\D/g, '');
                     
-                    // Aplicar máscara baseada no comprimento
+                  
                     if (value.length <= 10) {
-                        // Formato: (00) 0000-0000
+                       
                         value = value.replace(/(\d{2})(\d)/, '($1) $2');
                         value = value.replace(/(\d{4})(\d)/, '$1-$2');
                     } else if (value.length <= 11) {
-                        // Formato: (00) 00000-0000
+                     
                         value = value.replace(/(\d{2})(\d)/, '($1) $2');
                         value = value.replace(/(\d{5})(\d)/, '$1-$2');
                     }
-                    
-                    // Limitar o comprimento
+                
                     if (value.length > 15) {
                         value = value.substring(0, 15);
                     }
@@ -817,18 +813,18 @@
                 });
             });
             
-            // Máscara para CEP - CORRIGIDA
+          
             const cepInputs = document.querySelectorAll('#ong-cep, #vol-cep');
             cepInputs.forEach(input => {
                 input.addEventListener('input', function(e) {
                     let value = e.target.value.replace(/\D/g, '');
                     
-                    // Aplicar máscara: 00000-000
+                    
                     if (value.length > 5) {
                         value = value.replace(/(\d{5})(\d)/, '$1-$2');
                     }
                     
-                    // Limitar o comprimento
+                
                     if (value.length > 9) {
                         value = value.substring(0, 9);
                     }
