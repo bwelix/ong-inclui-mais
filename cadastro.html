@@ -5,30 +5,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro - ONG Inclui+</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .form-section {
+            display: none;
+        }
+        
+        .form-section.active {
+            display: block;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #7a037e;
+            box-shadow: 0 0 0 2px rgba(122, 3, 126, 0.1);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .form-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .form-buttons .btn {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: block;
+        }
+        
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .fieldset-group {
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            background: #f8f9fa;
+        }
+        
+        .fieldset-group legend {
+            font-weight: 600;
+            color: #7a037e;
+            padding: 0 1rem;
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-buttons {
+                flex-direction: column;
+            }
+            
+            .fieldset-group {
+                padding: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-   
-       
-
-<header>
-    <div class="container header-container">
-        <div class="logo">
-            <h1>ONG Inclui+</h1>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <h1>ONG Inclui+</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home">Início</a></li>
+                <li><a href="index.html#sobre">Sobre</a></li>
+                <li><a href="index.html#funcionalidades">Funcionalidades</a></li>
+                <li><a href="index.html#ongs">Para ONGs</a></li>
+                <li><a href="index.html#voluntarios">Para Voluntários</a></li>
+                <li><a href="index.html#doadores">Para Doadores</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+            <a href="cadastro.html" class="btn">Começar Agora</a>
         </div>
-        <ul class="nav-menu">
-            <li><a href="index.html#home">Início</a></li>
-            <li><a href="index.html#sobre">Sobre</a></li>
-            <li><a href="index.html#funcionalidades">Funcionalidades</a></li>
-            <li><a href="index.html#ongs">Para ONGs</a></li>
-            <li><a href="index.html#voluntarios">Para Voluntários</a></li>
-            <li><a href="index.html#doadores">Para Doadores</a></li>
-            <li><a href="projetos.html">Projetos</a></li>
-            <li><a href="index.html#contato">Contato</a></li>
-        </ul>
-        <a href="cadastro.html" class="btn">Começar Agora</a>
-    </div>
-</header>
-   
+    </header>
 
     <section id="cadastro" class="bg-light">
         <div class="container">
@@ -43,75 +140,199 @@
                     <button class="btn btn-secondary" data-form="voluntario">Sou Voluntário</button>
                 </div>
                 
+                <!-- FORMULÁRIO DA ONG -->
                 <div id="ong-form" class="form-section active">
                     <h3>Cadastre sua organização</h3>
                     <p class="form-description">Preencha o formulário com os dados da sua ONG e em até 48h nossa equipe entrará em contato para validar seu cadastro e liberar o acesso completo à plataforma.</p>
                     
                     <form id="form-ong">
-                        <div class="form-group">
-                            <label for="ong-name">Nome da ONG *</label>
-                            <input type="text" id="ong-name" required>
+                        <div class="fieldset-group">
+                            <legend>Dados da Organização</legend>
+                            <div class="form-group">
+                                <label for="ong-name">Nome da ONG *</label>
+                                <input type="text" id="ong-name" name="ong-name" required placeholder="Digite o nome completo da ONG">
+                            </div>
+                            <div class="form-group">
+                                <label for="ong-cnpj">CNPJ *</label>
+                                <input type="text" id="ong-cnpj" name="ong-cnpj" required placeholder="00.000.000/0000-00" maxlength="18">
+                            </div>
+                            <div class="form-group">
+                                <label for="ong-email">E-mail *</label>
+                                <input type="email" id="ong-email" name="ong-email" required placeholder="ong@exemplo.org">
+                            </div>
+                            <div class="form-group">
+                                <label for="ong-phone">Telefone *</label>
+                                <input type="tel" id="ong-phone" name="ong-phone" required placeholder="(00) 00000-0000" maxlength="15">
+                            </div>
+                            <div class="form-group">
+                                <label for="ong-cause">Causa Principal *</label>
+                                <select id="ong-cause" name="ong-cause" required>
+                                    <option value="">Selecione uma causa</option>
+                                    <option value="educacao">Educação</option>
+                                    <option value="meio-ambiente">Meio Ambiente</option>
+                                    <option value="saude">Saúde</option>
+                                    <option value="direitos-humanos">Direitos Humanos</option>
+                                    <option value="assistencia-social">Assistência Social</option>
+                                    <option value="outra">Outra</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="ong-cnpj">CNPJ *</label>
-                            <input type="text" id="ong-cnpj" required>
+                        
+                        <div class="fieldset-group">
+                            <legend>Endereço da Organização</legend>
+                            <div class="form-group">
+                                <label for="ong-cep">CEP *</label>
+                                <input type="text" id="ong-cep" name="ong-cep" required placeholder="00000-000" maxlength="9">
+                            </div>
+                            <div class="form-group">
+                                <label for="ong-address">Endereço *</label>
+                                <input type="text" id="ong-address" name="ong-address" required placeholder="Rua, número, complemento">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="ong-city">Cidade *</label>
+                                    <input type="text" id="ong-city" name="ong-city" required placeholder="Cidade">
+                                </div>
+                                <div class="form-group">
+                                    <label for="ong-state">Estado *</label>
+                                    <select id="ong-state" name="ong-state" required>
+                                        <option value="">Selecione</option>
+                                        <option value="AC">Acre</option>
+                                        <option value="AL">Alagoas</option>
+                                        <option value="AP">Amapá</option>
+                                        <option value="AM">Amazonas</option>
+                                        <option value="BA">Bahia</option>
+                                        <option value="CE">Ceará</option>
+                                        <option value="DF">Distrito Federal</option>
+                                        <option value="ES">Espírito Santo</option>
+                                        <option value="GO">Goiás</option>
+                                        <option value="MA">Maranhão</option>
+                                        <option value="MT">Mato Grosso</option>
+                                        <option value="MS">Mato Grosso do Sul</option>
+                                        <option value="MG">Minas Gerais</option>
+                                        <option value="PA">Pará</option>
+                                        <option value="PB">Paraíba</option>
+                                        <option value="PR">Paraná</option>
+                                        <option value="PE">Pernambuco</option>
+                                        <option value="PI">Piauí</option>
+                                        <option value="RJ">Rio de Janeiro</option>
+                                        <option value="RN">Rio Grande do Norte</option>
+                                        <option value="RS">Rio Grande do Sul</option>
+                                        <option value="RO">Rondônia</option>
+                                        <option value="RR">Roraima</option>
+                                        <option value="SC">Santa Catarina</option>
+                                        <option value="SP">São Paulo</option>
+                                        <option value="SE">Sergipe</option>
+                                        <option value="TO">Tocantíns</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="ong-email">E-mail *</label>
-                            <input type="email" id="ong-email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="ong-phone">Telefone *</label>
-                            <input type="tel" id="ong-phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="ong-cause">Causa Principal *</label>
-                            <select id="ong-cause" required>
-                                <option value="">Selecione uma causa</option>
-                                <option value="educacao">Educação</option>
-                                <option value="meio-ambiente">Meio Ambiente</option>
-                                <option value="saude">Saúde</option>
-                                <option value="direitos-humanos">Direitos Humanos</option>
-                                <option value="assistencia-social">Assistência Social</option>
-                                <option value="outra">Outra</option>
-                            </select>
-                        </div>
+                        
                         <button type="submit" class="btn btn-submit">Enviar Cadastro</button>
                     </form>
                 </div>
                 
+                <!-- FORMULÁRIO DO VOLUNTÁRIO -->
                 <div id="voluntario-form" class="form-section">
                     <h3>Junte-se ao nosso time de agentes de transformação</h3>
                     <p class="form-description">Crie seu perfil, informe suas habilidades, disponibilidade e causas de interesse. Em breve, oportunidades compatíveis com seu perfil começarão a aparecer!</p>
                     
                     <form id="form-voluntario">
-                        <div class="form-group">
-                            <label for="vol-name">Nome Completo *</label>
-                            <input type="text" id="vol-name" required>
+                        <div class="fieldset-group">
+                            <legend>Dados Pessoais</legend>
+                            <div class="form-group">
+                                <label for="vol-name">Nome Completo *</label>
+                                <input type="text" id="vol-name" name="vol-name" required placeholder="Digite seu nome completo">
+                            </div>
+                            <div class="form-group">
+                                <label for="vol-cpf">CPF *</label>
+                                <input type="text" id="vol-cpf" name="vol-cpf" required placeholder="000.000.000-00" maxlength="14">
+                            </div>
+                            <div class="form-group">
+                                <label for="vol-birthdate">Data de Nascimento *</label>
+                                <input type="date" id="vol-birthdate" name="vol-birthdate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="vol-email">E-mail *</label>
+                                <input type="email" id="vol-email" name="vol-email" required placeholder="seu@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="vol-phone">Telefone *</label>
+                                <input type="tel" id="vol-phone" name="vol-phone" required placeholder="(00) 00000-0000" maxlength="15">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="vol-email">E-mail *</label>
-                            <input type="email" id="vol-email" required>
+                        
+                        <div class="fieldset-group">
+                            <legend>Endereço</legend>
+                            <div class="form-group">
+                                <label for="vol-cep">CEP *</label>
+                                <input type="text" id="vol-cep" name="vol-cep" required placeholder="00000-000" maxlength="9">
+                            </div>
+                            <div class="form-group">
+                                <label for="vol-address">Endereço *</label>
+                                <input type="text" id="vol-address" name="vol-address" required placeholder="Rua, número, complemento">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="vol-city">Cidade *</label>
+                                    <input type="text" id="vol-city" name="vol-city" required placeholder="Cidade">
+                                </div>
+                                <div class="form-group">
+                                    <label for="vol-state">Estado *</label>
+                                    <select id="vol-state" name="vol-state" required>
+                                        <option value="">Selecione</option>
+                                        <option value="AC">Acre</option>
+                                        <option value="AL">Alagoas</option>
+                                        <option value="AP">Amapá</option>
+                                        <option value="AM">Amazonas</option>
+                                        <option value="BA">Bahia</option>
+                                        <option value="CE">Ceará</option>
+                                        <option value="DF">Distrito Federal</option>
+                                        <option value="ES">Espírito Santo</option>
+                                        <option value="GO">Goiás</option>
+                                        <option value="MA">Maranhão</option>
+                                        <option value="MT">Mato Grosso</option>
+                                        <option value="MS">Mato Grosso do Sul</option>
+                                        <option value="MG">Minas Gerais</option>
+                                        <option value="PA">Pará</option>
+                                        <option value="PB">Paraíba</option>
+                                        <option value="PR">Paraná</option>
+                                        <option value="PE">Pernambuco</option>
+                                        <option value="PI">Piauí</option>
+                                        <option value="RJ">Rio de Janeiro</option>
+                                        <option value="RN">Rio Grande do Norte</option>
+                                        <option value="RS">Rio Grande do Sul</option>
+                                        <option value="RO">Rondônia</option>
+                                        <option value="RR">Roraima</option>
+                                        <option value="SC">Santa Catarina</option>
+                                        <option value="SP">São Paulo</option>
+                                        <option value="SE">Sergipe</option>
+                                        <option value="TO">Tocantíns</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="vol-phone">Telefone</label>
-                            <input type="tel" id="vol-phone">
+                        
+                        <div class="fieldset-group">
+                            <legend>Perfil de Voluntário</legend>
+                            <div class="form-group">
+                                <label for="vol-skills">Habilidades *</label>
+                                <textarea id="vol-skills" name="vol-skills" rows="3" required placeholder="Descreva suas habilidades, formações e experiências"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="vol-availability">Disponibilidade *</label>
+                                <select id="vol-availability" name="vol-availability" required>
+                                    <option value="">Selecione sua disponibilidade</option>
+                                    <option value="manha">Manhã</option>
+                                    <option value="tarde">Tarde</option>
+                                    <option value="noite">Noite</option>
+                                    <option value="finais-semana">Finais de semana</option>
+                                    <option value="flexivel">Horário flexível</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="vol-skills">Habilidades *</label>
-                            <textarea id="vol-skills" rows="3" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="vol-availability">Disponibilidade *</label>
-                            <select id="vol-availability" required>
-                                <option value="">Selecione sua disponibilidade</option>
-                                <option value="manha">Manhã</option>
-                                <option value="tarde">Tarde</option>
-                                <option value="noite">Noite</option>
-                                <option value="finais-semana">Finais de semana</option>
-                                <option value="flexivel">Horário flexível</option>
-                            </select>
-                        </div>
+                        
                         <button type="submit" class="btn btn-secondary btn-submit">Cadastrar como Voluntário</button>
                     </form>
                 </div>
@@ -119,7 +340,6 @@
         </div>
     </section>
 
-    
     <footer id="contato">
         <div class="container">
             <div class="footer-content">
@@ -162,6 +382,497 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initFormToggle();
+            initFormValidation();
+            initMasks();
+            initAutoCompleteCEP();
+        });
+
+        function initFormToggle() {
+            const formButtons = document.querySelectorAll('.form-buttons .btn');
+            const formSections = document.querySelectorAll('.form-section');
+            
+            formButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const formType = this.getAttribute('data-form');
+                    
+                    formButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        if (btn.classList.contains('btn-secondary')) {
+                            btn.classList.add('btn-secondary');
+                        }
+                    });
+                    this.classList.add('active');
+                    this.classList.remove('btn-secondary');
+                    
+                    formSections.forEach(section => {
+                        section.classList.remove('active');
+                        if (section.id === `${formType}-form`) {
+                            section.classList.add('active');
+                        }
+                    });
+                    
+                    const otherButton = Array.from(formButtons).find(btn => btn !== this);
+                    if (otherButton) {
+                        otherButton.classList.add('btn-secondary');
+                    }
+                });
+            });
+        }
+
+        function initFormValidation() {
+            const ongForm = document.getElementById('form-ong');
+            const voluntarioForm = document.getElementById('form-voluntario');
+            
+            if (ongForm) {
+                ongForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    if (validateOngForm()) {
+                        showSuccessMessage('ONG cadastrada com sucesso! Nossa equipe entrará em contato em até 48h.');
+                        this.reset();
+                    }
+                });
+            }
+            
+            if (voluntarioForm) {
+                voluntarioForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    if (validateVoluntarioForm()) {
+                        showSuccessMessage('Cadastro realizado com sucesso! Em breve você receberá oportunidades compatíveis com seu perfil.');
+                        this.reset();
+                    }
+                });
+            }
+        }
+
+        function validateOngForm() {
+            const nome = document.getElementById('ong-name');
+            const cnpj = document.getElementById('ong-cnpj');
+            const email = document.getElementById('ong-email');
+            const telefone = document.getElementById('ong-phone');
+            const causa = document.getElementById('ong-cause');
+            const cep = document.getElementById('ong-cep');
+            const endereco = document.getElementById('ong-address');
+            const cidade = document.getElementById('ong-city');
+            const estado = document.getElementById('ong-state');
+            
+            let isValid = true;
+            
+            clearErrors();
+            
+            if (!nome.value.trim()) {
+                showError(nome, 'Nome da ONG é obrigatório');
+                isValid = false;
+            }
+            
+            if (!cnpj.value.trim()) {
+                showError(cnpj, 'CNPJ é obrigatório');
+                isValid = false;
+            } else if (!validateCNPJ(cnpj.value)) {
+                showError(cnpj, 'CNPJ inválido');
+                isValid = false;
+            }
+            
+            if (!email.value.trim()) {
+                showError(email, 'E-mail é obrigatório');
+                isValid = false;
+            } else if (!validateEmail(email.value)) {
+                showError(email, 'E-mail inválido');
+                isValid = false;
+            }
+            
+            if (!telefone.value.trim()) {
+                showError(telefone, 'Telefone é obrigatório');
+                isValid = false;
+            }
+            
+            if (!causa.value) {
+                showError(causa, 'Selecione uma causa principal');
+                isValid = false;
+            }
+            
+            if (!cep.value.trim()) {
+                showError(cep, 'CEP é obrigatório');
+                isValid = false;
+            } else if (!validateCEP(cep.value)) {
+                showError(cep, 'CEP inválido');
+                isValid = false;
+            }
+            
+            if (!endereco.value.trim()) {
+                showError(endereco, 'Endereço é obrigatório');
+                isValid = false;
+            }
+            
+            if (!cidade.value.trim()) {
+                showError(cidade, 'Cidade é obrigatória');
+                isValid = false;
+            }
+            
+            if (!estado.value) {
+                showError(estado, 'Estado é obrigatório');
+                isValid = false;
+            }
+            
+            return isValid;
+        }
+
+        function validateVoluntarioForm() {
+            const nome = document.getElementById('vol-name');
+            const cpf = document.getElementById('vol-cpf');
+            const dataNascimento = document.getElementById('vol-birthdate');
+            const email = document.getElementById('vol-email');
+            const habilidades = document.getElementById('vol-skills');
+            const disponibilidade = document.getElementById('vol-availability');
+            const cep = document.getElementById('vol-cep');
+            const endereco = document.getElementById('vol-address');
+            const cidade = document.getElementById('vol-city');
+            const estado = document.getElementById('vol-state');
+            
+            let isValid = true;
+            
+            clearErrors();
+            
+            if (!nome.value.trim()) {
+                showError(nome, 'Nome completo é obrigatório');
+                isValid = false;
+            }
+            
+            if (!cpf.value.trim()) {
+                showError(cpf, 'CPF é obrigatório');
+                isValid = false;
+            } else if (!validateCPF(cpf.value)) {
+                showError(cpf, 'CPF inválido');
+                isValid = false;
+            }
+            
+            if (!dataNascimento.value) {
+                showError(dataNascimento, 'Data de nascimento é obrigatória');
+                isValid = false;
+            } else {
+                const hoje = new Date();
+                const nascimento = new Date(dataNascimento.value);
+                const idade = hoje.getFullYear() - nascimento.getFullYear();
+                
+                if (idade < 16) {
+                    showError(dataNascimento, 'É necessário ter pelo menos 16 anos para se voluntariar');
+                    isValid = false;
+                }
+            }
+            
+            if (!email.value.trim()) {
+                showError(email, 'E-mail é obrigatório');
+                isValid = false;
+            } else if (!validateEmail(email.value)) {
+                showError(email, 'E-mail inválido');
+                isValid = false;
+            }
+            
+            if (!habilidades.value.trim()) {
+                showError(habilidades, 'Informe suas habilidades');
+                isValid = false;
+            }
+            
+            if (!disponibilidade.value) {
+                showError(disponibilidade, 'Selecione sua disponibilidade');
+                isValid = false;
+            }
+            
+            if (!cep.value.trim()) {
+                showError(cep, 'CEP é obrigatório');
+                isValid = false;
+            } else if (!validateCEP(cep.value)) {
+                showError(cep, 'CEP inválido');
+                isValid = false;
+            }
+            
+            if (!endereco.value.trim()) {
+                showError(endereco, 'Endereço é obrigatório');
+                isValid = false;
+            }
+            
+            if (!cidade.value.trim()) {
+                showError(cidade, 'Cidade é obrigatória');
+                isValid = false;
+            }
+            
+            if (!estado.value) {
+                showError(estado, 'Estado é obrigatório');
+                isValid = false;
+            }
+            
+            return isValid;
+        }
+
+        function validateCNPJ(cnpj) {
+            cnpj = cnpj.replace(/[^\d]+/g, '');
+            
+            if (cnpj === '') return false;
+            if (cnpj.length !== 14) return false;
+            
+            if (cnpj === "00000000000000" || 
+                cnpj === "11111111111111" || 
+                cnpj === "22222222222222" || 
+                cnpj === "33333333333333" || 
+                cnpj === "44444444444444" || 
+                cnpj === "55555555555555" || 
+                cnpj === "66666666666666" || 
+                cnpj === "77777777777777" || 
+                cnpj === "88888888888888" || 
+                cnpj === "99999999999999")
+                return false;
+                
+            let tamanho = cnpj.length - 2
+            let numeros = cnpj.substring(0, tamanho);
+            let digitos = cnpj.substring(tamanho);
+            let soma = 0;
+            let pos = tamanho - 7;
+            
+            for (let i = tamanho; i >= 1; i--) {
+                soma += numeros.charAt(tamanho - i) * pos--;
+                if (pos < 2) pos = 9;
+            }
+            
+            let resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+            if (resultado != digitos.charAt(0)) return false;
+            
+            tamanho = tamanho + 1;
+            numeros = cnpj.substring(0, tamanho);
+            soma = 0;
+            pos = tamanho - 7;
+            
+            for (let i = tamanho; i >= 1; i--) {
+                soma += numeros.charAt(tamanho - i) * pos--;
+                if (pos < 2) pos = 9;
+            }
+            
+            resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+            if (resultado != digitos.charAt(1)) return false;
+            
+            return true;
+        }
+
+        function validateCPF(cpf) {
+            cpf = cpf.replace(/[^\d]+/g, '');
+            
+            if (cpf === '') return false;
+            if (cpf.length !== 11) return false;
+            
+            if (cpf === "00000000000" || 
+                cpf === "11111111111" || 
+                cpf === "22222222222" || 
+                cpf === "33333333333" || 
+                cpf === "44444444444" || 
+                cpf === "55555555555" || 
+                cpf === "66666666666" || 
+                cpf === "77777777777" || 
+                cpf === "88888888888" || 
+                cpf === "99999999999")
+                return false;
+                
+            let add = 0;
+            for (let i = 0; i < 9; i++) {
+                add += parseInt(cpf.charAt(i)) * (10 - i);
+            }
+            let rev = 11 - (add % 11);
+            if (rev === 10 || rev === 11) rev = 0;
+            if (rev !== parseInt(cpf.charAt(9))) return false;
+            
+            add = 0;
+            for (let i = 0; i < 10; i++) {
+                add += parseInt(cpf.charAt(i)) * (11 - i);
+            }
+            rev = 11 - (add % 11);
+            if (rev === 10 || rev === 11) rev = 0;
+            if (rev !== parseInt(cpf.charAt(10))) return false;
+            
+            return true;
+        }
+
+        function validateCEP(cep) {
+            cep = cep.replace(/\D/g, '');
+            return cep.length === 8;
+        }
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        function showError(input, message) {
+            const formGroup = input.closest('.form-group');
+            if (!formGroup) return;
+            
+            const existingError = formGroup.querySelector('.error-message');
+            if (existingError) {
+                existingError.remove();
+            }
+            
+            input.style.borderColor = '#e74c3c';
+            
+            const errorElement = document.createElement('span');
+            errorElement.className = 'error-message';
+            errorElement.textContent = message;
+            
+            formGroup.appendChild(errorElement);
+        }
+
+        function clearErrors() {
+            const errorMessages = document.querySelectorAll('.error-message');
+            errorMessages.forEach(error => error.remove());
+            
+            const inputs = document.querySelectorAll('input, select, textarea');
+            inputs.forEach(input => {
+                input.style.borderColor = '';
+            });
+        }
+
+        function showSuccessMessage(message) {
+            const existingMessage = document.querySelector('.success-message');
+            if (existingMessage) {
+                existingMessage.remove();
+            }
+            
+            const successElement = document.createElement('div');
+            successElement.className = 'success-message';
+            successElement.textContent = message;
+            
+            const formContainer = document.querySelector('.form-container');
+            if (formContainer) {
+                formContainer.insertBefore(successElement, formContainer.firstChild);
+                
+                successElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                setTimeout(() => {
+                    successElement.remove();
+                }, 5000);
+            }
+        }
+
+        function initMasks() {
+            // MÁSCARA PARA CNPJ (ONG)
+            const cnpjInput = document.getElementById('ong-cnpj');
+            if (cnpjInput) {
+                cnpjInput.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/\D/g, '');
+                    
+                    if (value.length <= 14) {
+                        if (value.length > 2) value = value.replace(/^(\d{2})/, '$1.');
+                        if (value.length > 6) value = value.replace(/^(\d{2})\.(\d{3})/, '$1.$2.');
+                        if (value.length > 10) value = value.replace(/^(\d{2})\.(\d{3})\.(\d{3})/, '$1.$2.$3/');
+                        if (value.length > 12) value = value.replace(/^(\d{2})\.(\d{3})\.(\d{3})\/(\d{4})/, '$1.$2.$3/$4-');
+                    }
+                    
+                    e.target.value = value;
+                });
+            }
+            
+            // MÁSCARA PARA CPF (VOLUNTÁRIO)
+            const cpfInput = document.getElementById('vol-cpf');
+            if (cpfInput) {
+                cpfInput.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/\D/g, '');
+                    
+                    if (value.length <= 11) {
+                        if (value.length > 3) value = value.replace(/^(\d{3})/, '$1.');
+                        if (value.length > 6) value = value.replace(/^(\d{3})\.(\d{3})/, '$1.$2.');
+                        if (value.length > 9) value = value.replace(/^(\d{3})\.(\d{3})\.(\d{3})/, '$1.$2.$3-');
+                    }
+                    
+                    e.target.value = value;
+                });
+            }
+            
+            // MÁSCARA PARA TELEFONE (AMBOS OS FORMULÁRIOS)
+            const phoneInputs = document.querySelectorAll('#ong-phone, #vol-phone');
+            phoneInputs.forEach(input => {
+                input.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/\D/g, '');
+                    
+                    if (value.length <= 11) {
+                        if (value.length > 0) value = value.replace(/^(\d{0,2})/, '($1');
+                        if (value.length > 2) value = value.replace(/^(\(\d{2})/, '$1) ');
+                        
+                        if (value.length > 7) {
+                            if (value.length <= 10) {
+                                // Telefone fixo (8 dígitos)
+                                value = value.replace(/^(\(\d{2}\))\s(\d{4})/, '$1 $2-');
+                            } else {
+                                // Celular (9 dígitos)
+                                value = value.replace(/^(\(\d{2}\))\s(\d{5})/, '$1 $2-');
+                            }
+                        }
+                    }
+                    
+                    e.target.value = value;
+                });
+            });
+            
+            // MÁSCARA PARA CEP (AMBOS OS FORMULÁRIOS)
+            const cepInputs = document.querySelectorAll('#ong-cep, #vol-cep');
+            cepInputs.forEach(input => {
+                input.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/\D/g, '');
+                    
+                    if (value.length <= 8) {
+                        if (value.length > 5) value = value.replace(/^(\d{5})/, '$1-');
+                    }
+                    
+                    e.target.value = value;
+                });
+            });
+            
+            // MÁSCARA PARA NOME (APENAS LETRAS E ESPAÇOS)
+            const nameInputs = document.querySelectorAll('#ong-name, #vol-name');
+            nameInputs.forEach(input => {
+                input.addEventListener('input', function(e) {
+                    let value = e.target.value;
+                    // Permite letras, espaços e caracteres acentuados
+                    value = value.replace(/[^a-zA-ZÀ-ÿ\s]/g, '');
+                    e.target.value = value;
+                });
+            });
+            
+            // MÁSCARA PARA CIDADE (APENAS LETRAS E ESPAÇOS)
+            const cityInputs = document.querySelectorAll('#ong-city, #vol-city');
+            cityInputs.forEach(input => {
+                input.addEventListener('input', function(e) {
+                    let value = e.target.value;
+                    value = value.replace(/[^a-zA-ZÀ-ÿ\s]/g, '');
+                    e.target.value = value;
+                });
+            });
+        }
+
+        function initAutoCompleteCEP() {
+            // BUSCA AUTOMÁTICA DE ENDEREÇO VIA CEP
+            const cepInputs = document.querySelectorAll('#ong-cep, #vol-cep');
+            
+            cepInputs.forEach(cepInput => {
+                cepInput.addEventListener('blur', function() {
+                    const cep = this.value.replace(/\D/g, '');
+                    
+                    if (cep.length === 8) {
+                        const formType = this.id.includes('ong') ? 'ong' : 'vol';
+                        
+                        fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                            .then(response => response.json())
+                            .then(data => {
+                                if (!data.erro) {
+                                    document.getElementById(`${formType}-address`).value = data.logradouro;
+                                    document.getElementById(`${formType}-city`).value = data.localidade;
+                                    document.getElementById(`${formType}-state`).value = data.uf;
+                                }
+                            })
+                            .catch(error => {
+                                console.log('Erro ao buscar CEP:', error);
+                            });
+                    }
+                });
+            });
+        }
+    </script>
 </body>
 </html>

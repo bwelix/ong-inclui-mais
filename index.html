@@ -3,320 +3,298 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - ONG Inclui+</title>
+    <title>ONG Inclui+ - Plataforma de Gestão para ONGs</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-      
-        .form-section {
-            display: none;
-        }
-        
-        .form-section.active {
-            display: block;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: #333;
-        }
-        
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-        
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #7a037e;
-            box-shadow: 0 0 0 2px rgba(122, 3, 126, 0.1);
-        }
-        
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-        
-        .form-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .form-buttons .btn {
-            flex: 1;
-            text-align: center;
-        }
-        
-        .error-message {
-            color: #e74c3c;
-            font-size: 0.875rem;
-            margin-top: 0.25rem;
-            display: block;
-        }
-        
-        .success-message {
-            background: #d4edda;
-            color: #155724;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            margin-bottom: 1rem;
-            border: 1px solid #c3e6cb;
-        }
-        
-        @media (max-width: 768px) {
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-            
-            .form-buttons {
-                flex-direction: column;
-            }
-        }
-    </style>
 </head>
 <body>
-    <header>
-        <div class="container header-container">
-            <div class="logo">
-                <h1>ONG Inclui+</h1>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html#home">Início</a></li>
-                <li><a href="index.html#sobre">Sobre</a></li>
-                <li><a href="index.html#funcionalidades">Funcionalidades</a></li>
-                <li><a href="index.html#ongs">Para ONGs</a></li>
-                <li><a href="index.html#voluntarios">Para Voluntários</a></li>
-                <li><a href="index.html#doadores">Para Doadores</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="index.html#contato">Contato</a></li>
-            </ul>
-            <a href="cadastro.html" class="btn">Começar Agora</a>
-        </div>
-    </header>
+ 
+   
 
-    <section id="cadastro" class="bg-light">
+<header>
+    <div class="container header-container">
+        <div class="logo">
+            <h1>ONG Inclui+</h1>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html#home">Início</a></li>
+            <li><a href="index.html#sobre">Sobre</a></li>
+            <li><a href="index.html#funcionalidades">Funcionalidades</a></li>
+            <li><a href="index.html#ongs">Para ONGs</a></li>
+            <li><a href="index.html#voluntarios">Para Voluntários</a></li>
+            <li><a href="index.html#doadores">Para Doadores</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+        <a href="cadastro.html" class="btn">Começar Agora</a>
+    </div>
+</header>
+
+  
+    <section class="hero" id="home">
+        <div class="container">
+            <img src="./img/plantar.png" alt="ONG Inclui+ - Transformando comunidades">
+            <div class="hero-content">
+                <h2>Transforme o potencial da sua ONG em impacto real</h2>
+                <p>Conectamos sua organização às ferramentas, pessoas e recursos necessários para ampliar seu alcance e maximizar seu impacto social.</p>
+                <a href="cadastro.html" class="btn">Comece gratuitamente</a>
+            </div>
+        </div>
+    </section>
+
+   
+<section id="sobre">
+    <div class="container">
+        <div class="section-title">
+            <h2>Sobre a Plataforma</h2>
+            <p>Conheça nossa missão, visão e valores</p>
+        </div>
+        
+        <div class="sobre-grid">
+            <div class="card">
+                <div class="card-content">
+                    <h3>Nossa Missão</h3>
+                    <p>Democratizar o acesso à tecnologia de gestão para organizações do terceiro setor...</p>
+                </div>
+            </div>
+            
+            <div class="imagem-card">
+                <img src="./img/imagem1.jpg" alt="Voluntários">
+                <div class="imagem-overlay">
+                    <h3>Voluntários Dedicados</h3>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-content">
+                    <h3>Nossa Visão</h3>
+                    <p>Ser a plataforma de referência para gestão de ONGs na América Latina...</p>
+                </div>
+            </div>
+            
+            <div class="imagem-card">
+                <img src="./img/imagem2.jpg" alt="Comunidade">
+                <div class="imagem-overlay">
+                    <h3>Comunidade Unida</h3>
+                </div>
+            </div>
+            
+            <div class="card full-width">
+                <div class="card-content">
+                    <h3>Nossos Valores</h3>
+                    <ul>
+                        <li>Transparência: Acreditamos na gestão aberta...</li>
+                        <li>Colaboração: Fomentamos redes de apoio...</li>
+                        <li>Inovação: Desenvolvemos soluções tecnológicas...</li>
+                        <li>Impacto Social: Medimos nosso sucesso...</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> 
+
+ 
+    <section id="funcionalidades" class="bg-light">
         <div class="container">
             <div class="section-title">
-                <h2>Cadastre-se</h2>
-                <p>Junte-se à nossa comunidade de transformação</p>
+                <h2>Funcionalidades</h2>
+                <p>Uma plataforma completa para organizações que transformam o mundo</p>
             </div>
-            <div class="form-container">
-                <h3 class="form-title">Selecione seu perfil</h3>
-                <div class="form-buttons">
-                    <button class="btn active" data-form="ong">Sou uma ONG</button>
-                    <button class="btn btn-secondary" data-form="voluntario">Sou Voluntário</button>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Gestão de Projetos</h3>
+                        <p>Planeje, execute e acompanhe todos os seus projetos em um só lugar</p>
+                        <ul>
+                            <li>Cronogramas e metas personalizáveis</li>
+                            <li>Divisão de tarefas e responsabilidades</li>
+                            <li>Controle de prazos e entregas</li>
+                            <li>Relatórios de progresso automáticos</li>
+                            <li>Indicadores de impacto social</li>
+                        </ul>
+                    </div>
                 </div>
-                
-              
-                <div id="ong-form" class="form-section active">
-                    <h3>Cadastre sua organização</h3>
-                    <p class="form-description">Preencha o formulário com os dados da sua ONG e em até 48h nossa equipe entrará em contato para validar seu cadastro e liberar o acesso completo à plataforma.</p>
-                    
-                    <form id="form-ong">
-                        <fieldset>
-                            <legend>Dados da Organização</legend>
-                            <div class="form-group">
-                                <label for="ong-name">Nome da ONG *</label>
-                                <input type="text" id="ong-name" name="ong-name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="ong-cnpj">CNPJ *</label>
-                                <input type="text" id="ong-cnpj" name="ong-cnpj" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="ong-email">E-mail *</label>
-                                <input type="email" id="ong-email" name="ong-email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="ong-phone">Telefone *</label>
-                                <input type="tel" id="ong-phone" name="ong-phone" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="ong-cause">Causa Principal *</label>
-                                <select id="ong-cause" name="ong-cause" required>
-                                    <option value="">Selecione uma causa</option>
-                                    <option value="educacao">Educação</option>
-                                    <option value="meio-ambiente">Meio Ambiente</option>
-                                    <option value="saude">Saúde</option>
-                                    <option value="direitos-humanos">Direitos Humanos</option>
-                                    <option value="assistencia-social">Assistência Social</option>
-                                    <option value="outra">Outra</option>
-                                </select>
-                            </div>
-                        </fieldset>
-                        
-                        <fieldset>
-                            <legend>Endereço da Organização</legend>
-                            <div class="form-group">
-                                <label for="ong-cep">CEP *</label>
-                                <input type="text" id="ong-cep" name="ong-cep" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="ong-address">Endereço *</label>
-                                <input type="text" id="ong-address" name="ong-address" required>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="ong-city">Cidade *</label>
-                                    <input type="text" id="ong-city" name="ong-city" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="ong-state">Estado *</label>
-                                    <select id="ong-state" name="ong-state" required>
-                                        <option value="">Selecione</option>
-                                        <option value="AC">Acre</option>
-                                        <option value="AL">Alagoas</option>
-                                        <option value="AP">Amapá</option>
-                                        <option value="AM">Amazonas</option>
-                                        <option value="BA">Bahia</option>
-                                        <option value="CE">Ceará</option>
-                                        <option value="DF">Distrito Federal</option>
-                                        <option value="ES">Espírito Santo</option>
-                                        <option value="GO">Goiás</option>
-                                        <option value="MA">Maranhão</option>
-                                        <option value="MT">Mato Grosso</option>
-                                        <option value="MS">Mato Grosso do Sul</option>
-                                        <option value="MG">Minas Gerais</option>
-                                        <option value="PA">Pará</option>
-                                        <option value="PB">Paraíba</option>
-                                        <option value="PR">Paraná</option>
-                                        <option value="PE">Pernambuco</option>
-                                        <option value="PI">Piauí</option>
-                                        <option value="RJ">Rio de Janeiro</option>
-                                        <option value="RN">Rio Grande do Norte</option>
-                                        <option value="RS">Rio Grande do Sul</option>
-                                        <option value="RO">Rondônia</option>
-                                        <option value="RR">Roraima</option>
-                                        <option value="SC">Santa Catarina</option>
-                                        <option value="SP">São Paulo</option>
-                                        <option value="SE">Sergipe</option>
-                                        <option value="TO">Tocantíns</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </fieldset>
-                        
-                        <button type="submit" class="btn btn-submit">Enviar Cadastro</button>
-                    </form>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Gestão de Voluntários</h3>
+                        <p>Conecte-se com pessoas dispostas a fazer a diferença</p>
+                        <ul>
+                            <li>Cadastro e triagem de voluntários</li>
+                            <li>Banco de habilidades e disponibilidades</li>
+                            <li>Sistema de agendamento de atividades</li>
+                            <li>Certificação automática de horas voluntárias</li>
+                            <li>Comunicação integrada com voluntários</li>
+                        </ul>
+                    </div>
                 </div>
-                
-           
-                <div id="voluntario-form" class="form-section">
-                    <h3>Junte-se ao nosso time de agentes de transformação</h3>
-                    <p class="form-description">Crie seu perfil, informe suas habilidades, disponibilidade e causas de interesse. Em breve, oportunidades compatíveis com seu perfil começarão a aparecer!</p>
-                    
-                    <form id="form-voluntario">
-                        <fieldset>
-                            <legend>Dados Pessoais</legend>
-                            <div class="form-group">
-                                <label for="vol-name">Nome Completo *</label>
-                                <input type="text" id="vol-name" name="vol-name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="vol-cpf">CPF *</label>
-                                <input type="text" id="vol-cpf" name="vol-cpf" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="vol-birthdate">Data de Nascimento *</label>
-                                <input type="date" id="vol-birthdate" name="vol-birthdate" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="vol-email">E-mail *</label>
-                                <input type="email" id="vol-email" name="vol-email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="vol-phone">Telefone</label>
-                                <input type="tel" id="vol-phone" name="vol-phone">
-                            </div>
-                        </fieldset>
-                        
-                        <fieldset>
-                            <legend>Endereço</legend>
-                            <div class="form-group">
-                                <label for="vol-cep">CEP *</label>
-                                <input type="text" id="vol-cep" name="vol-cep" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="vol-address">Endereço *</label>
-                                <input type="text" id="vol-address" name="vol-address" required>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="vol-city">Cidade *</label>
-                                    <input type="text" id="vol-city" name="vol-city" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="vol-state">Estado *</label>
-                                    <select id="vol-state" name="vol-state" required>
-                                        <option value="">Selecione</option>
-                                        <option value="AC">Acre</option>
-                                        <option value="AL">Alagoas</option>
-                                        <option value="AP">Amapá</option>
-                                        <option value="AM">Amazonas</option>
-                                        <option value="BA">Bahia</option>
-                                        <option value="CE">Ceará</option>
-                                        <option value="DF">Distrito Federal</option>
-                                        <option value="ES">Espírito Santo</option>
-                                        <option value="GO">Goiás</option>
-                                        <option value="MA">Maranhão</option>
-                                        <option value="MT">Mato Grosso</option>
-                                        <option value="MS">Mato Grosso do Sul</option>
-                                        <option value="MG">Minas Gerais</option>
-                                        <option value="PA">Pará</option>
-                                        <option value="PB">Paraíba</option>
-                                        <option value="PR">Paraná</option>
-                                        <option value="PE">Pernambuco</option>
-                                        <option value="PI">Piauí</option>
-                                        <option value="RJ">Rio de Janeiro</option>
-                                        <option value="RN">Rio Grande do Norte</option>
-                                        <option value="RS">Rio Grande do Sul</option>
-                                        <option value="RO">Rondônia</option>
-                                        <option value="RR">Roraima</option>
-                                        <option value="SC">Santa Catarina</option>
-                                        <option value="SP">São Paulo</option>
-                                        <option value="SE">Sergipe</option>
-                                        <option value="TO">Tocantíns</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </fieldset>
-                        
-                        <fieldset>
-                            <legend>Perfil de Voluntário</legend>
-                            <div class="form-group">
-                                <label for="vol-skills">Habilidades *</label>
-                                <textarea id="vol-skills" name="vol-skills" rows="3" required></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="vol-availability">Disponibilidade *</label>
-                                <select id="vol-availability" name="vol-availability" required>
-                                    <option value="">Selecione sua disponibilidade</option>
-                                    <option value="manha">Manhã</option>
-                                    <option value="tarde">Tarde</option>
-                                    <option value="noite">Noite</option>
-                                    <option value="finais-semana">Finais de semana</option>
-                                    <option value="flexivel">Horário flexível</option>
-                                </select>
-                            </div>
-                        </fieldset>
-                        
-                        <button type="submit" class="btn btn-secondary btn-submit">Cadastrar como Voluntário</button>
-                    </form>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Divulgação de Projetos</h3>
+                        <p>Conte sua história para o mundo e amplie seu alcance</p>
+                        <ul>
+                            <li>Criação de páginas personalizadas para cada projeto</li>
+                            <li>Galeria de imagens e vídeos</li>
+                            <li>Blog integrado para atualizações</li>
+                            <li>Ferramentas de compartilhamento em redes sociais</li>
+                            <li>Mapa interativo mostrando áreas de atuação</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Captação de Recursos</h3>
+                        <p>Diversifique suas fontes de financiamento de forma estratégica</p>
+                        <ul>
+                            <li>Sistema de doações online integrado</li>
+                            <li>Campanhas de financiamento coletivo</li>
+                            <li>Gestão de editais e projetos institucionais</li>
+                            <li>Relatórios financeiros para prestação de contas</li>
+                            <li>Ferramentas para transparência nas aplicações de recursos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ongs">
+        <div class="container">
+            <div class="section-title">
+                <h2>Para ONGs</h2>
+                <p>O que sua organização ganha com a ONG Inclui+</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Eficiência Operacional</h3>
+                        <p>Reduza burocracia e tempo gasto com tarefas administrativas, focando no seu trabalho de campo.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Visibilidade Ampliada</h3>
+                        <p>Alcance novos públicos, doadores e voluntários através de nossa rede.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Gestão Estratégica</h3>
+                        <p>Tomar decisões baseadas em dados reais sobre seus projetos, voluntários e recursos.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Fortalecimento Institucional</h3>
+                        <p>Desenvolva capacidade técnica e de gestão para crescer de forma sustentável.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-title" style="margin-top: 4rem;">
+                <h2>Depoimentos</h2>
+                <p>O que as organizações dizem sobre nós</p>
+            </div>
+            <div class="testimonial-cards">
+                <div class="testimonial">
+                    <p class="testimonial-text">"A ONG Inclui+ transformou nossa forma de trabalhar. Conseguimos triplicar nosso número de voluntários e aumentar em 40% as doações no primeiro ano de uso."</p>
+                    <p class="testimonial-author">- Maria Silva, Instituto Educar para Transformar</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"Finalmente temos uma visão integrada de todos nossos projetos. A plataforma nos permitiu expandir nossas atividades para duas novas comunidades."</p>
+                    <p class="testimonial-author">- João Santos, Associação Comunitária Esperança</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="voluntarios" class="bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Para Voluntários</h2>
+                <p>Sua habilidade pode transformar realidades</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Encontre Oportunidades</h3>
+                        <p>Encontre oportunidades de voluntariado que combinam com seu tempo, suas habilidades e suas causas do coração.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Benefícios para Voluntários</h3>
+                        <ul>
+                            <li>Encontre oportunidades que se alinham ao seu perfil</li>
+                            <li>Flexibilidade de horários e modalidades de trabalho</li>
+                            <li>Certificação de horas voluntárias</li>
+                            <li>Conexão com uma comunidade de agentes de transformação</li>
+                            <li>Desenvolvimento de habilidades e experiências profissionais</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="doadores">
+        <div class="container">
+            <div class="section-title">
+                <h2>Para Doadores</h2>
+                <p>Apoie causas com transparência e acompanhe o impacto de sua doação</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Transparência e Confiança</h3>
+                        <p>Na ONG Inclui+, você pode:</p>
+                        <ul>
+                            <li>Conhecer detalhadamente os projetos que está apoiando</li>
+                            <li>Acompanhar o andamento das iniciativas financiadas</li>
+                            <li>Receber relatórios de impacto das suas doações</li>
+                            <li>Descobrir novas organizações alinhadas aos seus valores</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Modalidades de Apoio</h3>
+                        <ul>
+                            <li>Doações únicas ou recorrentes</li>
+                            <li>Financiamento de projetos específicos</li>
+                            <li>Apoio institucional</li>
+                            <li>Doações em espécie</li>
+                            <li>Patrocínio de eventos e campanhas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   <section id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Perguntas Frequentes</h2>
+                <p>Tire suas dúvidas sobre a plataforma</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-content">
+                        <h3>A plataforma é realmente gratuita?</h3>
+                        <p>Sim! Oferecemos um plano gratuito com funcionalidades essenciais para organizações de pequeno porte. Para ONGs com necessidades mais complexas, temos planos premium com valores acessíveis.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Como é feita a verificação das ONGs cadastradas?</h3>
+                        <p>Todas as organizações passam por um processo de validação documental para garantir a idoneidade e transparência da plataforma.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Posso usar a plataforma pelo celular?</h3>
+                        <p>Sim! A ONG Inclui+ é totalmente responsiva e conta com aplicativo móvel para Android e iOS.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -332,14 +310,14 @@
                 <div class="footer-section">
                     <h3>Links Rápidos</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html#sobre">Sobre nós</a></li>
-                        <li><a href="index.html#funcionalidades">Funcionalidades</a></li>
-                        <li><a href="index.html#ongs">Para ONGs</a></li>
-                        <li><a href="index.html#voluntarios">Para Voluntários</a></li>
-                        <li><a href="index.html#doadores">Para Doadores</a></li>
-                        <li><a href="index.html#faq">FAQ</a></li>
+                        <li><a href="#sobre">Sobre nós</a></li>
+                        <li><a href="#funcionalidades">Funcionalidades</a></li>
+                        <li><a href="#ongs">Para ONGs</a></li>
+                        <li><a href="#voluntarios">Para Voluntários</a></li>
+                        <li><a href="#doadores">Para Doadores</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                         <li><a href="cadastro.html">Cadastro</a></li>
-                        <li><a href="projeto.html">Projetos</a></li>
+                
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -364,475 +342,6 @@
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-     o
-            initFormToggle();
-            initFormValidation();
-            initMasks();
-        });
-
-
-        function initFormToggle() {
-            const formButtons = document.querySelectorAll('.form-buttons .btn');
-            const formSections = document.querySelectorAll('.form-section');
-            
-            formButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const formType = this.getAttribute('data-form');
-                    
-                    
-                    formButtons.forEach(btn => {
-                        btn.classList.remove('active');
-                        if (btn.classList.contains('btn-secondary')) {
-                            btn.classList.add('btn-secondary');
-                        }
-                    });
-                    this.classList.add('active');
-                    this.classList.remove('btn-secondary');
-                    
-                    
-                    formSections.forEach(section => {
-                        section.classList.remove('active');
-                        if (section.id === `${formType}-form`) {
-                            section.classList.add('active');
-                        }
-                    });
-                    
-                  
-                    const otherButton = Array.from(formButtons).find(btn => btn !== this);
-                    if (otherButton) {
-                        otherButton.classList.add('btn-secondary');
-                    }
-                });
-            });
-        }
-
-   
-        function initFormValidation() {
-            const ongForm = document.getElementById('form-ong');
-            const voluntarioForm = document.getElementById('form-voluntario');
-            
-            if (ongForm) {
-                ongForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    if (validateOngForm()) {
-                        showSuccessMessage('ONG cadastrada com sucesso! Nossa equipe entrará em contato em até 48h.');
-                        this.reset();
-                    }
-                });
-            }
-            
-            if (voluntarioForm) {
-                voluntarioForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    if (validateVoluntarioForm()) {
-                        showSuccessMessage('Cadastro realizado com sucesso! Em breve você receberá oportunidades compatíveis com seu perfil.');
-                        this.reset();
-                    }
-                });
-            }
-        }
-
-       
-        function validateOngForm() {
-            const nome = document.getElementById('ong-name');
-            const cnpj = document.getElementById('ong-cnpj');
-            const email = document.getElementById('ong-email');
-            const telefone = document.getElementById('ong-phone');
-            const causa = document.getElementById('ong-cause');
-            const cep = document.getElementById('ong-cep');
-            const endereco = document.getElementById('ong-address');
-            const cidade = document.getElementById('ong-city');
-            const estado = document.getElementById('ong-state');
-            
-            let isValid = true;
-            
-            clearErrors();
-            
-           
-            if (!nome.value.trim()) {
-                showError(nome, 'Nome da ONG é obrigatório');
-                isValid = false;
-            }
-            
-            if (!cnpj.value.trim()) {
-                showError(cnpj, 'CNPJ é obrigatório');
-                isValid = false;
-            } else if (!validateCNPJ(cnpj.value)) {
-                showError(cnpj, 'CNPJ inválido');
-                isValid = false;
-            }
-            
-            if (!email.value.trim()) {
-                showError(email, 'E-mail é obrigatório');
-                isValid = false;
-            } else if (!validateEmail(email.value)) {
-                showError(email, 'E-mail inválido');
-                isValid = false;
-            }
-            
-            if (!telefone.value.trim()) {
-                showError(telefone, 'Telefone é obrigatório');
-                isValid = false;
-            }
-            
-            if (!causa.value) {
-                showError(causa, 'Selecione uma causa principal');
-                isValid = false;
-            }
-            
-            if (!cep.value.trim()) {
-                showError(cep, 'CEP é obrigatório');
-                isValid = false;
-            } else if (!validateCEP(cep.value)) {
-                showError(cep, 'CEP inválido');
-                isValid = false;
-            }
-            
-            if (!endereco.value.trim()) {
-                showError(endereco, 'Endereço é obrigatório');
-                isValid = false;
-            }
-            
-            if (!cidade.value.trim()) {
-                showError(cidade, 'Cidade é obrigatória');
-                isValid = false;
-            }
-            
-            if (!estado.value) {
-                showError(estado, 'Estado é obrigatório');
-                isValid = false;
-            }
-            
-            return isValid;
-        }
-
-       
-        function validateVoluntarioForm() {
-            const nome = document.getElementById('vol-name');
-            const cpf = document.getElementById('vol-cpf');
-            const dataNascimento = document.getElementById('vol-birthdate');
-            const email = document.getElementById('vol-email');
-            const habilidades = document.getElementById('vol-skills');
-            const disponibilidade = document.getElementById('vol-availability');
-            const cep = document.getElementById('vol-cep');
-            const endereco = document.getElementById('vol-address');
-            const cidade = document.getElementById('vol-city');
-            const estado = document.getElementById('vol-state');
-            
-            let isValid = true;
-            
-            clearErrors();
-            
-            if (!nome.value.trim()) {
-                showError(nome, 'Nome completo é obrigatório');
-                isValid = false;
-            }
-            
-            if (!cpf.value.trim()) {
-                showError(cpf, 'CPF é obrigatório');
-                isValid = false;
-            } else if (!validateCPF(cpf.value)) {
-                showError(cpf, 'CPF inválido');
-                isValid = false;
-            }
-            
-            if (!dataNascimento.value) {
-                showError(dataNascimento, 'Data de nascimento é obrigatória');
-                isValid = false;
-            } else {
-                const hoje = new Date();
-                const nascimento = new Date(dataNascimento.value);
-                const idade = hoje.getFullYear() - nascimento.getFullYear();
-                
-                if (idade < 16) {
-                    showError(dataNascimento, 'É necessário ter pelo menos 16 anos para se voluntariar');
-                    isValid = false;
-                }
-            }
-            
-            if (!email.value.trim()) {
-                showError(email, 'E-mail é obrigatório');
-                isValid = false;
-            } else if (!validateEmail(email.value)) {
-                showError(email, 'E-mail inválido');
-                isValid = false;
-            }
-            
-            if (!habilidades.value.trim()) {
-                showError(habilidades, 'Informe suas habilidades');
-                isValid = false;
-            }
-            
-            if (!disponibilidade.value) {
-                showError(disponibilidade, 'Selecione sua disponibilidade');
-                isValid = false;
-            }
-            
-            if (!cep.value.trim()) {
-                showError(cep, 'CEP é obrigatório');
-                isValid = false;
-            } else if (!validateCEP(cep.value)) {
-                showError(cep, 'CEP inválido');
-                isValid = false;
-            }
-            
-            if (!endereco.value.trim()) {
-                showError(endereco, 'Endereço é obrigatório');
-                isValid = false;
-            }
-            
-            if (!cidade.value.trim()) {
-                showError(cidade, 'Cidade é obrigatória');
-                isValid = false;
-            }
-            
-            if (!estado.value) {
-                showError(estado, 'Estado é obrigatório');
-                isValid = false;
-            }
-            
-            return isValid;
-        }
-
-        
-        function validateCNPJ(cnpj) {
-            cnpj = cnpj.replace(/[^\d]+/g, '');
-            
-            if (cnpj === '') return false;
-            if (cnpj.length !== 14) return false;
-            
-          
-            if (cnpj === "00000000000000" || 
-                cnpj === "11111111111111" || 
-                cnpj === "22222222222222" || 
-                cnpj === "33333333333333" || 
-                cnpj === "44444444444444" || 
-                cnpj === "55555555555555" || 
-                cnpj === "66666666666666" || 
-                cnpj === "77777777777777" || 
-                cnpj === "88888888888888" || 
-                cnpj === "99999999999999")
-                return false;
-                
-         
-            let tamanho = cnpj.length - 2
-            let numeros = cnpj.substring(0, tamanho);
-            let digitos = cnpj.substring(tamanho);
-            let soma = 0;
-            let pos = tamanho - 7;
-            
-            for (let i = tamanho; i >= 1; i--) {
-                soma += numeros.charAt(tamanho - i) * pos--;
-                if (pos < 2) pos = 9;
-            }
-            
-            let resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-            if (resultado != digitos.charAt(0)) return false;
-            
-            tamanho = tamanho + 1;
-            numeros = cnpj.substring(0, tamanho);
-            soma = 0;
-            pos = tamanho - 7;
-            
-            for (let i = tamanho; i >= 1; i--) {
-                soma += numeros.charAt(tamanho - i) * pos--;
-                if (pos < 2) pos = 9;
-            }
-            
-            resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-            if (resultado != digitos.charAt(1)) return false;
-            
-            return true;
-        }
-
-    
-        function validateCPF(cpf) {
-            cpf = cpf.replace(/[^\d]+/g, '');
-            
-            if (cpf === '') return false;
-            if (cpf.length !== 11) return false;
-            
-            
-            if (cpf === "00000000000" || 
-                cpf === "11111111111" || 
-                cpf === "22222222222" || 
-                cpf === "33333333333" || 
-                cpf === "44444444444" || 
-                cpf === "55555555555" || 
-                cpf === "66666666666" || 
-                cpf === "77777777777" || 
-                cpf === "88888888888" || 
-                cpf === "99999999999")
-                return false;
-                
-           
-            let add = 0;
-            for (let i = 0; i < 9; i++) {
-                add += parseInt(cpf.charAt(i)) * (10 - i);
-            }
-            let rev = 11 - (add % 11);
-            if (rev === 10 || rev === 11) rev = 0;
-            if (rev !== parseInt(cpf.charAt(9))) return false;
-            
-        
-            add = 0;
-            for (let i = 0; i < 10; i++) {
-                add += parseInt(cpf.charAt(i)) * (11 - i);
-            }
-            rev = 11 - (add % 11);
-            if (rev === 10 || rev === 11) rev = 0;
-            if (rev !== parseInt(cpf.charAt(10))) return false;
-            
-            return true;
-        }
-
-       
-        function validateCEP(cep) {
-            cep = cep.replace(/\D/g, '');
-            return cep.length === 8;
-        }
-
-        function validateEmail(email) {
-            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return re.test(email);
-        }
-
-       
-        function showError(input, message) {
-            const formGroup = input.closest('.form-group');
-            if (!formGroup) return;
-            
-       
-            const existingError = formGroup.querySelector('.error-message');
-            if (existingError) {
-                existingError.remove();
-            }
-            
-          
-            input.style.borderColor = '#e74c3c';
-            
-        
-            const errorElement = document.createElement('span');
-            errorElement.className = 'error-message';
-            errorElement.textContent = message;
-            
-            formGroup.appendChild(errorElement);
-        }
-
-        
-        function clearErrors() {
-            const errorMessages = document.querySelectorAll('.error-message');
-            errorMessages.forEach(error => error.remove());
-            
-            const inputs = document.querySelectorAll('input, select, textarea');
-            inputs.forEach(input => {
-                input.style.borderColor = '';
-            });
-        }
-
-      
-        function showSuccessMessage(message) {
-            
-            const existingMessage = document.querySelector('.success-message');
-            if (existingMessage) {
-                existingMessage.remove();
-            }
-            
-            const successElement = document.createElement('div');
-            successElement.className = 'success-message';
-            successElement.textContent = message;
-            
-            const formContainer = document.querySelector('.form-container');
-            if (formContainer) {
-                formContainer.insertBefore(successElement, formContainer.firstChild);
-                
-         
-                successElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                
-              
-                setTimeout(() => {
-                    successElement.remove();
-                }, 5000);
-            }
-        }
-
-        function initMasks() {
-           
-            const cnpjInput = document.getElementById('ong-cnpj');
-            if (cnpjInput) {
-                cnpjInput.addEventListener('input', function(e) {
-                    let value = e.target.value.replace(/\D/g, '');
-                    if (value.length <= 14) {
-                        value = value.replace(/(\d{2})(\d)/, '$1.$2');
-                        value = value.replace(/(\d{3})(\d)/, '$1.$2');
-                        value = value.replace(/(\d{3})(\d)/, '$1/$2');
-                        value = value.replace(/(\d{4})(\d{1,2})$/, '$1-$2');
-                    }
-                    e.target.value = value;
-                });
-            }
-            
-         
-            const cpfInput = document.getElementById('vol-cpf');
-            if (cpfInput) {
-                cpfInput.addEventListener('input', function(e) {
-                    let value = e.target.value.replace(/\D/g, '');
-                    if (value.length <= 11) {
-                        value = value.replace(/(\d{3})(\d)/, '$1.$2');
-                        value = value.replace(/(\d{3})(\d)/, '$1.$2');
-                        value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
-                    }
-                    e.target.value = value;
-                });
-            }
-            
-           
-            const phoneInputs = document.querySelectorAll('input[type="tel"]');
-            phoneInputs.forEach(input => {
-                input.addEventListener('input', function(e) {
-                    let value = e.target.value.replace(/\D/g, '');
-                    
-                  
-                    if (value.length <= 10) {
-                       
-                        value = value.replace(/(\d{2})(\d)/, '($1) $2');
-                        value = value.replace(/(\d{4})(\d)/, '$1-$2');
-                    } else if (value.length <= 11) {
-                     
-                        value = value.replace(/(\d{2})(\d)/, '($1) $2');
-                        value = value.replace(/(\d{5})(\d)/, '$1-$2');
-                    }
-                
-                    if (value.length > 15) {
-                        value = value.substring(0, 15);
-                    }
-                    
-                    e.target.value = value;
-                });
-            });
-            
-          
-            const cepInputs = document.querySelectorAll('#ong-cep, #vol-cep');
-            cepInputs.forEach(input => {
-                input.addEventListener('input', function(e) {
-                    let value = e.target.value.replace(/\D/g, '');
-                    
-                    
-                    if (value.length > 5) {
-                        value = value.replace(/(\d{5})(\d)/, '$1-$2');
-                    }
-                    
-                
-                    if (value.length > 9) {
-                        value = value.substring(0, 9);
-                    }
-                    
-                    e.target.value = value;
-                });
-            });
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
