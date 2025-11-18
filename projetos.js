@@ -380,3 +380,95 @@ function formatDate(dateString) {
     const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
     return new Date(dateString).toLocaleDateString('pt-BR', options);
 }
+// Adicionar esta função ao arquivo projetos.js
+function createProjectBadges(projeto) {
+  const badges = [];
+  
+  // Badge de categoria
+  badges.push(`<span class="badge badge-primary">${getCategoryName(projeto.categoria)}</span>`);
+  
+  // Badge de urgência
+  if (projeto.urgente) {
+    badges.push('<span class="badge badge-error status-urgent">Urgente</span>');
+  }
+  
+  // Badge de status baseado no progresso
+  const progresso = (projeto.arrecadado / projeto.meta) * 100;
+  if (progresso >= 100) {
+    badges.push('<span class="badge badge-success">Meta Atingida</span>');
+  } else if (progresso >= 75) {
+    badges.push('<span class="badge badge-warning">Quase Lá</span>');
+  } else if (progresso >= 50) {
+    badges.push('<span class="badge badge-info">Em Andamento</span>');
+  } else {
+    badges.push('<span class="badge badge-secondary">Precisa de Apoio</span>');
+  }
+  
+  // Badge de destaque
+  if (projeto.destaque) {
+    badges.push('<span class="badge badge-warning">⭐ Em Destaque</span>');
+  }
+  
+  return badges.join('');
+}
+
+// Atualizar a função createProjectCard para incluir badges
+function createProjectCard(projeto) {
+  const progresso = (projeto.arrecadado / projeto.meta) * 100;
+  const progressoFormatado = progresso > 100 ? 100 : progresso;
+  
+  const card = document.createElement('div');
+  card.className = 'project-card';
+  card.setAttribute('data-category', projeto.categoria);
+  card.setAttribute('data-id', projeto.id);
+  
+  card.innerHTML = `
+    <div class="project-image">
+      ${projeto.imagem}
+    </div>
+    <div class="project-content">
+      <div class="badges-group" style="margin-bottom: 1rem;">
+        ${createProjectBadges(projeto)}
+      </div>
+      <h3 class="project-title">${projeto.titulo}</h3>
+      <p class="project-organization">${projeto.organizacao}</p>
+      <p class="project-description">${projeto.descricao}</p>
+      
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: ${progressoFormatado}%"></div>
+      </div>
+      
+      <div class="project-stats">
+        <div class="stat">
+          <span class="stat-value">${progressoFormatado.toFixed(0)}%</span>
+          <span class="stat-label">Meta</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">R$ ${(projeto.arrecadado / 1000).toFixed(0)}K</span>
+          <span class="stat-label">Arrecadado</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">${projeto.voluntarios}</span>
+          <span class="stat-label">Voluntários</span>
+        </div>
+      </div>
+      
+      <div class="tags-container">
+        ${projeto.necessidades.map(need => 
+          `<span class="tag tag-${projeto.categoria}">${need}</span>`
+        ).join('')}
+      </div>
+      
+      <div class="project-actions">
+        <button class="btn btn-secondary" onclick="openProjectModal(${projeto.id})">
+          Saber Mais
+        </button>
+        <button class="btn" onclick="supportProject(${projeto.id})">
+          Apoiar Projeto
+        </button>
+      </div>
+    </div>
+  `;
+  
+  return card;
+}

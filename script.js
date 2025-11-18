@@ -434,4 +434,40 @@ function initMasks() {
             e.target.value = value.substring(0, 15);
         });
     });
+// ================= MENU HAMBÚRGUER ==================
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+const navOverlay = document.getElementById("navOverlay");
+
+if (menuToggle) {
+    menuToggle.addEventListener("click", () => {
+        menuToggle.classList.toggle("active");
+        navMenu.classList.toggle("active");
+        navOverlay.classList.toggle("active");
+    });
+
+    navOverlay.addEventListener("click", () => {
+        menuToggle.classList.remove("active");
+        navMenu.classList.remove("active");
+        navOverlay.classList.remove("active");
+    });
 }
+
+// ============ DROPDOWN NO MOBILE  ============
+const dropdownTrigger = document.querySelector(".nav-item .nav-link + .dropdown-icon");
+const dropdownItems = document.querySelectorAll(".nav-item");
+
+dropdownItems.forEach(item => {
+    const link = item.querySelector(".nav-link");
+    const dropdown = item.querySelector(".dropdown-menu");
+
+    if (dropdown && link) {
+        link.addEventListener("click", (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                item.classList.toggle("open");
+                dropdown.classList.toggle("active");
+            }
+        });
+    }
+});}
