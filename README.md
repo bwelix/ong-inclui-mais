@@ -57,14 +57,16 @@ Acreditamos que toda organização que faz o bem merece ter acesso às ferrament
 ## Estrutura do Projeto
 ```plaintext 
 ong-inclui-mais/
+ong-inclui-mais/
 │
 ├── index.html              # Página principal
-├── cadastro.html           # Página de cadastro
+├── cadastro.html           # Página de cadastro (ONGs e Voluntários)
 ├── projetos.html           # Página de projetos sociais
-├── style.css              # Estilos principais
+├── style.css              # Estilos principais e sistema de design
 ├── projetos.css           # Estilos específicos dos projetos
-├── script.js              # JavaScript principal
 ├── projetos.js            # JavaScript dos projetos
+├── badges.js              # Sistema de badges e filtros
+├── script.js              # JavaScript principal
 └── img/                   # Diretório de imagens
     ├── plantar.png
     ├── imagem1.jpg
@@ -80,29 +82,63 @@ ong-inclui-mais/
 
 • Header fixo com efeito de blur
 
+• Menu mobile com animações
+
+• Animações de scroll e loading states
+
 • Design responsivo para todos os dispositivos
 
 ###  Formulários
 
 • Alternância entre cadastro de ONG e Voluntário
 
-• Validação completa de campos
+• Validação completa de campos (CNPJ, CPF, email, etc.)
 
-• Máscaras para CNPJ e telefone
+• Máscaras automáticas para dados brasileiros
 
-• Mensagens de sucesso e erro
+• Auto-complete de CEP via API
 
-• Animações de transição
+• Mensagens de sucesso e erro com feedback visual
 
-### Experiência do Usuário
+• Animações de transição suaves
 
-• Animações de scroll
+### Sistema de Projetos
 
-• Loading states
+• Catálogo de projetos sociais categorizados
 
-• Design acessível
+• Filtros por categoria (Educação, Meio Ambiente, Saúde, etc.)
 
-• Performance otimizada
+• Sistema de badges para status e reconhecimento
+
+• Modal de detalhes dos projetos
+
+• Progresso visual de arrecadação
+
+• Projetos em destaque e urgentes
+
+### Sistema de Badges
+
+• Badges de Categoria: Identificação visual por área de atuação
+
+• Badges de Status: Indicadores de urgência e progresso
+
+• Badges de Conquistas: Sistema de reconhecimento para usuários
+
+• Filtros Interativos: Filtragem por tags e categorias
+
+• Tags Dinâmicas: Sistema de etiquetas para necessidades específicas
+
+### Design System
+
+• Cores: Paleta profissional com roxo como cor principal (#7a037e)
+
+• Tipografia: Fontes modernas e legíveis (Segoe UI)
+
+• Componentes: Cards, badges, botões e formulários padronizados
+
+• Animações: Transições suaves e profissionais
+
+• Grid System: Layout responsivo com CSS Grid e Flexbox
 
 ### Características do Design
 
@@ -147,6 +183,43 @@ ong-inclui-mais/
 3. Escolha a causa que deseja apoiar
 
 4. Faça sua doação com transparência
+
+## Recursos Técnicos Avançados 
+
+### Validações Implementadas
+
+• CNPJ e CPF com validação de dígitos verificadores
+
+• Email com regex validation
+
+• CEP com busca automática de endereço
+
+• Telefone com máscara dinâmica
+
+• Data de nascimento com validação de idade mínima
+
+### Responsividade
+
+• Mobile First approach
+
+• Breakpoints: 375px, 576px, 768px, 992px, 1200px, 1400px
+
+• Grid system flexível
+
+• Componentes adaptáveis
+
+### Destaques 
+
+• **Performance Otimizada:** Carregamento rápido e animações suaves
+
+• **Acessibilidade:** Navegação por teclado e leitores de tela
+
+• **SEO Friendly:** Estrutura semântica e meta tags
+
+• **Cross-browser:** Compatível com principais navegadores
+
+• **Manutenível:** Código organizado e documentado
+
 
 ## Agradecimentos
 

@@ -1402,7 +1402,6 @@ footer {
 
 
 
-/* Reduz o rodapé */
 footer {
   padding: 12px 0;
   font-size: 14px;
@@ -1418,35 +1417,35 @@ footer {
 }
 .hero {
     display: flex;
-    align-items: center;      /* Centraliza verticalmente */
-    justify-content: center;  /* Centraliza horizontalmente */
-    text-align: center;       /* Centraliza o texto */
-    min-height: 110vh;        /* Aumenta a área roxa */
+    align-items: center;      
+    justify-content: center;  
+    text-align: center;      
+    min-height: 110vh;        
     padding: 40px 20px;
 }
 
 .hero .container {
     display: flex;
-    flex-direction: column;   /* Organiza imagem em cima e texto embaixo */
-    align-items: center;      /* Centraliza os itens */
-    justify-content: center;  /* Centraliza na vertical */
-    gap: 20px;                /* Espaço entre imagem e texto */
+    flex-direction: column;   
+    align-items: center;      
+    justify-content: center;  
+    gap: 20px;                
 }
 
 .hero-content {
-    max-width: 700px;         /* Limita largura para texto elegante */
+    max-width: 700px;         
 }
 .hero h2 {
-    font-size: 3rem;      /* Aumenta bem o título */
+    font-size: 3rem;      
     font-weight: 800;
 }
 
 .hero p {
-    font-size: 1.3rem;    /* Aumenta texto do parágrafo */
-    line-height: 1.6;     /* Deixa a leitura mais agradável */
+    font-size: 1.3rem;    
+    line-height: 1.6;     
 }
 
 .hero .btn {
-    font-size: 1.1rem;    /* Aumenta texto do botão */
-    padding: 12px 28px;   /* Aumenta o botão proporcionalmente */
+    font-size: 1.1rem;    
+    padding: 12px 28px;   
 }

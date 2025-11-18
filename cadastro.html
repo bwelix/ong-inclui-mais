@@ -141,7 +141,7 @@
                     <button class="btn btn-secondary" data-form="voluntario">Sou Voluntário</button>
                 </div>
                 
-                <!-- FORMULÁRIO DA ONG -->
+                
                 <div id="ong-form" class="form-section active">
                     <h3>Cadastre sua organização</h3>
                     <p class="form-description">Preencha o formulário com os dados da sua ONG e em até 48h nossa equipe entrará em contato para validar seu cadastro e liberar o acesso completo à plataforma.</p>
@@ -234,7 +234,7 @@
                     </form>
                 </div>
                 
-                <!-- FORMULÁRIO DO VOLUNTÁRIO -->
+               
                 <div id="voluntario-form" class="form-section">
                     <h3>Junte-se ao nosso time de agentes de transformação</h3>
                     <p class="form-description">Crie seu perfil, informe suas habilidades, disponibilidade e causas de interesse. Em breve, oportunidades compatíveis com seu perfil começarão a aparecer!</p>
@@ -753,7 +753,7 @@
         }
 
         function initMasks() {
-            // MÁSCARA PARA CNPJ (ONG)
+          
             const cnpjInput = document.getElementById('ong-cnpj');
             if (cnpjInput) {
                 cnpjInput.addEventListener('input', function(e) {
@@ -770,7 +770,7 @@
                 });
             }
             
-            // MÁSCARA PARA CPF (VOLUNTÁRIO)
+            
             const cpfInput = document.getElementById('vol-cpf');
             if (cpfInput) {
                 cpfInput.addEventListener('input', function(e) {
@@ -786,7 +786,6 @@
                 });
             }
             
-            // MÁSCARA PARA TELEFONE (AMBOS OS FORMULÁRIOS)
             const phoneInputs = document.querySelectorAll('#ong-phone, #vol-phone');
             phoneInputs.forEach(input => {
                 input.addEventListener('input', function(e) {
@@ -798,10 +797,10 @@
                         
                         if (value.length > 7) {
                             if (value.length <= 10) {
-                                // Telefone fixo (8 dígitos)
+                               
                                 value = value.replace(/^(\(\d{2}\))\s(\d{4})/, '$1 $2-');
                             } else {
-                                // Celular (9 dígitos)
+                              
                                 value = value.replace(/^(\(\d{2}\))\s(\d{5})/, '$1 $2-');
                             }
                         }
@@ -811,7 +810,7 @@
                 });
             });
             
-            // MÁSCARA PARA CEP (AMBOS OS FORMULÁRIOS)
+           
             const cepInputs = document.querySelectorAll('#ong-cep, #vol-cep');
             cepInputs.forEach(input => {
                 input.addEventListener('input', function(e) {
@@ -825,18 +824,18 @@
                 });
             });
             
-            // MÁSCARA PARA NOME (APENAS LETRAS E ESPAÇOS)
+            
             const nameInputs = document.querySelectorAll('#ong-name, #vol-name');
             nameInputs.forEach(input => {
                 input.addEventListener('input', function(e) {
                     let value = e.target.value;
-                    // Permite letras, espaços e caracteres acentuados
+                    
                     value = value.replace(/[^a-zA-ZÀ-ÿ\s]/g, '');
                     e.target.value = value;
                 });
             });
             
-            // MÁSCARA PARA CIDADE (APENAS LETRAS E ESPAÇOS)
+           
             const cityInputs = document.querySelectorAll('#ong-city, #vol-city');
             cityInputs.forEach(input => {
                 input.addEventListener('input', function(e) {
@@ -848,7 +847,7 @@
         }
 
         function initAutoCompleteCEP() {
-            // BUSCA AUTOMÁTICA DE ENDEREÇO VIA CEP
+         
             const cepInputs = document.querySelectorAll('#ong-cep, #vol-cep');
             
             cepInputs.forEach(cepInput => {

@@ -434,7 +434,7 @@ function initMasks() {
             e.target.value = value.substring(0, 15);
         });
     });
-// ================= MENU HAMBÚRGUER ==================
+
 const menuToggle = document.getElementById("menuToggle");
 const navMenu = document.getElementById("navMenu");
 const navOverlay = document.getElementById("navOverlay");
@@ -486,7 +486,6 @@ navOverlay.addEventListener("click", () => {
   navOverlay.classList.remove("active");
 });
 
-// === SPA - Navegação Dinâmica ===
 const app = document.querySelector("main") || document.body;
 const routes = {
   home: "#home",
@@ -516,8 +515,7 @@ window.addEventListener("hashchange", navigate);
 window.addEventListener("load", navigate);
 
 
-// === VALIDAÇÃO DE FORMULÁRIO (GENÉRICA) ===
-// Ativa validação automática para qualquer form com class="validar"
+
 document.addEventListener("submit", function (event) {
   if (event.target.matches(".validar")) {
     event.preventDefault();
