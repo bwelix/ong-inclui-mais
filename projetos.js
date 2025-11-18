@@ -380,19 +380,17 @@ function formatDate(dateString) {
     const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
     return new Date(dateString).toLocaleDateString('pt-BR', options);
 }
-// Adicionar esta função ao arquivo projetos.js
+
 function createProjectBadges(projeto) {
   const badges = [];
-  
-  // Badge de categoria
+
   badges.push(`<span class="badge badge-primary">${getCategoryName(projeto.categoria)}</span>`);
-  
-  // Badge de urgência
+
   if (projeto.urgente) {
     badges.push('<span class="badge badge-error status-urgent">Urgente</span>');
   }
   
-  // Badge de status baseado no progresso
+ 
   const progresso = (projeto.arrecadado / projeto.meta) * 100;
   if (progresso >= 100) {
     badges.push('<span class="badge badge-success">Meta Atingida</span>');
@@ -404,7 +402,7 @@ function createProjectBadges(projeto) {
     badges.push('<span class="badge badge-secondary">Precisa de Apoio</span>');
   }
   
-  // Badge de destaque
+ 
   if (projeto.destaque) {
     badges.push('<span class="badge badge-warning">⭐ Em Destaque</span>');
   }
@@ -412,7 +410,6 @@ function createProjectBadges(projeto) {
   return badges.join('');
 }
 
-// Atualizar a função createProjectCard para incluir badges
 function createProjectCard(projeto) {
   const progresso = (projeto.arrecadado / projeto.meta) * 100;
   const progressoFormatado = progresso > 100 ? 100 : progresso;

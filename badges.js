@@ -1,5 +1,3 @@
-// badges.js - Funcionalidades avançadas do sistema de badges
-
 class BadgeSystem {
   constructor() {
     this.selectedTags = new Set();
@@ -12,7 +10,7 @@ class BadgeSystem {
     this.initDynamicBadges();
   }
 
-  // Filtragem por tags
+ 
   initTagFiltering() {
     document.addEventListener('click', (e) => {
       if (e.target.classList.contains('tag')) {
@@ -34,7 +32,7 @@ class BadgeSystem {
   }
 
   updateActiveTags() {
-    // Atualizar a visualização das tags ativas
+    
     const activeTagsContainer = document.getElementById('active-tags');
     if (!activeTagsContainer) return;
 
@@ -76,7 +74,7 @@ class BadgeSystem {
     });
   }
 
-  // Interações com badges
+
   initBadgeInteractions() {
     document.addEventListener('click', (e) => {
       if (e.target.classList.contains('badge-interactive')) {
@@ -101,14 +99,14 @@ class BadgeSystem {
     }
   }
 
-  // Badges dinâmicos baseados em dados
+
   initDynamicBadges() {
     this.createAchievementBadges();
     this.createImpactBadges();
   }
 
   createAchievementBadges() {
-    // Badges baseados em conquistas do usuário/organização
+ 
     const achievements = {
       'Primeira Doação': false,
       'Voluntário Ativo': true,
@@ -130,7 +128,7 @@ class BadgeSystem {
   }
 
   createImpactBadges() {
-    // Badges baseados no impacto das ações
+   
     const impactData = {
       'Vidas Impactadas': '1K+',
       'Árvores Plantadas': '500+',
@@ -152,7 +150,6 @@ class BadgeSystem {
     });
   }
 
-  // Métodos utilitários
   createBadge(type, text, options = {}) {
     const badge = document.createElement('span');
     badge.className = `badge badge-${type} ${options.size ? `badge-${options.size}` : ''} ${options.interactive ? 'badge-interactive' : ''}`;
@@ -171,19 +168,19 @@ class BadgeSystem {
     return badge;
   }
 
-  // Filtros específicos
+  
   filterByCategory(category) {
     const filterBtn = document.querySelector(`[data-filter="${this.getCategoryKey(category)}"]`);
     if (filterBtn) filterBtn.click();
   }
 
   filterByStatus(status) {
-    // Implementar filtro por status
+    
     console.log('Filtrando por status:', status);
   }
 
   filterByLevel(level) {
-    // Implementar filtro por nível
+   
     console.log('Filtrando por nível:', level);
   }
 
@@ -200,8 +197,8 @@ class BadgeSystem {
   }
 }
 
-// Inicializar o sistema de badges
+
 const badgeSystem = new BadgeSystem();
 
-// Exportar para uso global
+
 window.badgeSystem = badgeSystem;

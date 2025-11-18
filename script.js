@@ -453,7 +453,7 @@ if (menuToggle) {
     });
 }
 
-// ============ DROPDOWN NO MOBILE  ============
+
 const dropdownTrigger = document.querySelector(".nav-item .nav-link + .dropdown-icon");
 const dropdownItems = document.querySelectorAll(".nav-item");
 
@@ -471,3 +471,91 @@ dropdownItems.forEach(item => {
         });
     }
 });}
+ // === MENU MOBILE ===
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+const navOverlay = document.getElementById("navOverlay");
+
+menuToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+  navOverlay.classList.toggle("active");
+});
+
+navOverlay.addEventListener("click", () => {
+  navMenu.classList.remove("active");
+  navOverlay.classList.remove("active");
+});
+
+// === SPA - Navegação Dinâmica ===
+const app = document.querySelector("main") || document.body;
+const routes = {
+  home: "#home",
+  sobre: "#sobre",
+  funcionalidades: "#funcionalidades",
+  ongs: "#ongs",
+  voluntarios: "#voluntarios",
+  doadores: "#doadores",
+  faq: "#faq",
+  contato: "#contato",
+};
+
+function navigate() {
+  const hash = location.hash.replace("#", "") || "home";
+  const sectionId = routes[hash];
+
+  document.querySelectorAll("section").forEach(sec => {
+    sec.style.display = "none";
+  });
+
+  if (sectionId && document.querySelector(sectionId)) {
+    document.querySelector(sectionId).style.display = "block";
+  }
+}
+
+window.addEventListener("hashchange", navigate);
+window.addEventListener("load", navigate);
+
+
+// === VALIDAÇÃO DE FORMULÁRIO (GENÉRICA) ===
+// Ativa validação automática para qualquer form com class="validar"
+document.addEventListener("submit", function (event) {
+  if (event.target.matches(".validar")) {
+    event.preventDefault();
+    
+    const form = event.target;
+    let valido = true;
+    let mensagens = [];
+
+    form.querySelectorAll("[required]").forEach(campo => {
+      if (!campo.value.trim()) {
+        valido = false;
+        mensagens.push(`O campo "${campo.placeholder || campo.name}" é obrigatório.`);
+      }
+
+      if (campo.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(campo.value)) {
+        valido = false;
+        mensagens.push("E-mail inválido.");
+      }
+
+      if (campo.id === "senha" && campo.value.length < 6) {
+        valido = false;
+        mensagens.push("A senha deve ter no mínimo 6 caracteres.");
+      }
+    });
+
+    const feedback = form.querySelector(".form-feedback") || document.createElement("div");
+    feedback.className = "form-feedback";
+    feedback.style.color = valido ? "green" : "red";
+    feedback.style.marginTop = "10px";
+
+    feedback.innerHTML = valido
+      ? "Formulário enviado com sucesso!"
+      : mensagens.join("<br>");
+
+    form.appendChild(feedback);
+
+    if (valido) {
+      form.reset();
+    }
+  }
+});
